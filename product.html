@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Product | REAL MOTORS</title><link rel="icon" type="image/png" href="assets/real-motors-logo.png"><link rel="stylesheet" href="styles.css"></head><body><div class="topline"><span>GENUINE & LOCAL MOTORCYCLE SPARE PARTS</span><span>● KATTANKUDY, SRI LANKA</span></div><header class="header"><a class="logo" href="index.html"><img class="brand-logo" src="assets/real-motors-logo.png" alt="REAL MOTORS logo"><span>REAL<span class="red">MOTORS</span><small>MOTORCYCLE SPARE PARTS</small></span></a><nav><a href="index.html#home">HOME</a><a href="index.html#categories">CATEGORIES</a><a href="index.html#brands">BIKE BRANDS</a><a href="index.html#models">BIKE MODELS</a></nav><div class="head-actions"><a class="cart-button" href="index.html#shop">BACK TO SHOP ↗</a></div></header><main class="product-page" id="product-page"></main><footer><a class="logo" href="index.html"><img class="brand-logo" src="assets/real-motors-logo.png" alt="REAL MOTORS logo"><span>REAL<span class="red">MOTORS</span><small>MOTORCYCLE SPARE PARTS</small></span></a><p>Genuine & local motorcycle spare parts.</p><span>© 2026 REAL MOTORS · DESIGN PREVIEW</span></footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="app.js"></script><script>
+(function(){
+ function addExtrudedLogo(){
+  if(document.querySelector(".rm-logo-extruded"))return;
+  var wrap=document.createElement("div");
+  wrap.className="rm-logo-extruded";
+  wrap.setAttribute("aria-hidden","true");
+  for(var i=0;i<7;i++){
+   var layer=document.createElement("img");
+   layer.src="assets/real-motors-watermark.png";
+   layer.alt="";
+   layer.draggable=false;
+   layer.className=i===6?"rm-logo-face":"rm-logo-side";
+   layer.style.transform="translateZ("+(i*1.5)+"px)";
+   wrap.appendChild(layer);
+  }
+  document.body.prepend(wrap);
+ }
+ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",addExtrudedLogo,{once:true});
+ else addExtrudedLogo();
+})();
+</script></body></html>

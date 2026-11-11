@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>REAL MOTORS | Motorcycle Parts</title><link rel="icon" type="image/png" href="assets/real-motors-logo.png"><link rel="stylesheet" href="styles.css"></head>
+<body class="rm-page-brands">
+<div class="topline"><span>GENUINE & SECOND QUALITY MOTORCYCLE SPARE PARTS</span><span>● KATTANKUDY, SRI LANKA</span></div>
+<header class="header"><a class="logo" href="index.html"><img class="brand-logo" src="assets/real-motors-logo.png" alt="REAL MOTORS logo"><span>REAL<span class="red">MOTORS</span><small>MOTORCYCLE SPARE PARTS</small></span></a>
+<nav><a href="index.html">HOME</a><a href="categories.html">CATEGORIES</a><a class="active" href="brands.html">BIKE BRANDS</a><a href="models.html">BIKE MODELS</a></nav>
+<div class="head-actions"><button class="search-toggle" onclick="document.querySelector('#search').focus()">⌕</button><button class="cart-button" onclick="toggleCart()">CART <i id="cart-count">0</i></button><button class="mobile-menu" onclick="document.body.classList.toggle('menu-open')">☰</button></div></header>
+<main><div class="rm-page-banner"><p class="eyebrow">REAL MOTORS / BIKE BRANDS</p><h1>BIKE BRANDS</h1><p>Find spare parts by motorcycle brand.</p></div>
+<section class="hero hero-reference" id="home">
+<div class="hero-bg"></div><div class="hero-copy">
+<p class="eyebrow hero-pill"><i></i> DIRECT IMPORTERS OF GENUINE SPARE PARTS AND MODIFICATION ITEMS</p>
+<h1>UPGRADE<br><em>YOUR RIDE</em></h1>
+<p class="hero-sub">Premium Motorcycle Spare Parts &amp; Genuine & Second Quality Spare Parts</p>
+<div class="hero-cta"><a class="primary" href="#shop">SHOP NOW <b>→</b></a><a class="whatsapp-cta" href="#" id="hero-whatsapp">◉ &nbsp; Chat on WhatsApp</a></div>
+<div class="hero-trust"><span>♧ &nbsp; Genuine Parts</span><span>▣ &nbsp; Islandwide Delivery</span><span>◯ &nbsp; Order via WhatsApp</span></div>
+</div><div class="hero-index">REAL MOTORS <span>—</span> KATTANKUDY</div>
+</section>
+<section class="ticker"><div>GENUINE PARTS <b>✦</b> SECOND QUALITY <b>✦</b> BUILT FOR YOUR BIKE <b>✦</b> REAL MOTORS <b>✦</b> GENUINE PARTS <b>✦</b> SECOND QUALITY <b>✦</b></div></section>
+<section class="section" id="categories"><div class="section-head"><div><p class="eyebrow">FIND WHAT YOU NEED</p><h2>SHOP BY <em>CATEGORY</em></h2></div><span>01 / CATEGORIES</span></div><div class="category-grid">
+<a class="category-card" href="categories.html#shop" onclick="setCategory('Lighting')"><span>01</span><b>LIGHTING</b><small>Headlights, indicators & more</small><i>↗</i></a><a class="category-card" href="categories.html#shop" onclick="setCategory('Brake System')"><span>02</span><b>BRAKE SYSTEM</b><small>Pads, shoes & levers</small><i>↗</i></a><a class="category-card" href="categories.html#shop" onclick="setCategory('Engine Parts')"><span>03</span><b>ENGINE PARTS</b><small>Reliable engine components</small><i>↗</i></a><a class="category-card" href="categories.html#shop" onclick="setCategory('Body Parts')"><span>04</span><b>BODY PARTS</b><small>Panels, tanks & covers</small><i>↗</i></a></div></section>
+<section class="section brands" id="brands"><div class="section-head"><div><p class="eyebrow">YOUR MACHINE. YOUR MATCH.</p><h2>BIKE <em>BRANDS</em></h2></div><span>02 / BRANDS</span></div><div class="brand-row" id="brand-row"></div></section>
+<section class="section models" id="models"><div class="section-head"><div><p class="eyebrow">FIND PARTS THAT FIT</p><h2>POPULAR BIKE <em>MODELS</em></h2></div><span>03 / MODELS</span></div><div class="model-pills" id="model-pills"></div></section>
+<section class="section shop" id="shop"><div class="section-head"><div><p class="eyebrow">THE PARTS COUNTER</p><h2>FEATURED <em>PARTS</em></h2><p class="muted">Select a product to view its dedicated details page.</p></div><span>04 / CATALOGUE</span></div><div class="tools"><label class="searchbox">⌕ <input id="search" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Search product, part number or bike model..." oninput="renderProducts()"></label><select id="filter-brand" onchange="renderProducts()"><option value="">All brands</option></select><select id="filter-category" onchange="renderProducts()"><option value="">All categories</option><option>Lighting</option><option>Brake System</option><option>Engine Parts</option><option>Body Parts</option></select><button class="clear" onclick="clearFilters()">RESET ↺</button></div><div class="product-grid" id="products"></div><p class="demo-note">DEMO CATALOGUE · Sample products and prices for design preview only. Not confirmed stock.</p></section>
+<section class="delivery"><div><p class="eyebrow">DELIVERY & PICKUP</p><h2>GOOD PARTS.<br><em>STRAIGHT TO YOU.</em></h2><p>Free delivery within Kattankudy. Delivery outside Kattankudy is chargeable. Shop pickup is available.</p></div><div class="delivery-badge">RM<span>LOCAL<br>TRUST</span></div></section>
+</main><section class="about-section" id="about"><div class="about-inner"><p class="eyebrow">WHO WE ARE</p><h2 id="about-title">ABOUT <em>REAL MOTORS</em></h2><p id="about-body">Your trusted destination for genuine and second quality motorcycle spare parts in Kattankudy.</p></div></section>
+<footer class="site-footer" id="footer">
+<div class="footer-grid">
+<div class="footer-about"><a class="footer-brand" href="index.html">REAL<span>MOTORS</span></a><p id="footer-about-text">Direct importers of genuine motorcycle spare parts and modification items.</p><div class="footer-social"><a id="footer-instagram" href="#" target="_blank" aria-label="Instagram">◎</a><a id="footer-facebook" href="#" target="_blank" aria-label="Facebook">f</a><a id="footer-email-link" href="mailto:">✉</a></div></div>
+<div><h3>Quick Links</h3><a href="index.html">Home</a><a href="index.html#shop">Products</a><a href="#about">About Us</a></div>
+<div><h3>Categories</h3><div id="footer-categories"><a href="categories.html">Lighting</a><a href="categories.html">Brake System</a><a href="categories.html">Engine Parts</a><a href="categories.html">Body Parts</a></div></div>
+<div class="footer-contact"><h3>Contact Us</h3><p><b>☎</b><span id="footer-phone">+94 XX XXX XXXX</span></p><p><b>✉</b><span id="footer-email">realmotors@example.com</span></p><p><b>⌖</b><span id="footer-address">Kattankudy, Sri Lanka</span></p><p><b>◉</b><span id="footer-instagram-name">@realmotors</span></p></div>
+</div>
+<div class="footer-bottom"><span id="footer-copyright">© 2026 REAL MOTORS. All rights reserved.</span><span>Genuine &amp; Second Quality Motorcycle Spare Parts</span><a href="admin.html" class="footer-admin-small">ADMIN LOGIN</a></div>
+</footer>
+<div class="cart-overlay" id="cart-overlay" onclick="if(event.target===this)toggleCart()"><aside class="cart-panel"><div class="cart-head"><div><small>YOUR SELECTION</small><h2>SHOPPING CART</h2></div><button onclick="toggleCart()">✕</button></div><div id="cart-items"></div><div class="cart-foot">
+<div class="order-customer-fields">
+<label>Your name<input id="order-customer-name" type="text" placeholder="Customer name" autocomplete="name"></label>
+<label>Phone number<input id="order-customer-phone" type="tel" placeholder="+94..." autocomplete="tel"></label>
+<label>Delivery method<select id="order-delivery-method"><option value="Shop Pickup">Shop Pickup</option><option value="Kattankudy Delivery">Kattankudy Delivery</option><option value="Islandwide Delivery">Islandwide Delivery (fee confirmed by shop)</option></select></label>
+<label id="order-address-wrap">Delivery address<input id="order-customer-address" type="text" placeholder="Enter delivery address"></label>
+</div>
+<div class="cart-total-row"><span>ORDER SUBTOTAL</span><b id="cart-total">LKR 0</b></div>
+<button class="primary whatsapp-order-btn" onclick="checkoutWhatsApp()">ORDER VIA WHATSAPP <b>↗</b></button>
+<small class="order-note">Your order request will open in WhatsApp. The shop will confirm availability, delivery fee and final total.</small>
+</div></aside></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="app.js"></script><script>
+(function(){
+ function addExtrudedLogo(){
+  if(document.querySelector(".rm-logo-extruded"))return;
+  var wrap=document.createElement("div");
+  wrap.className="rm-logo-extruded";
+  wrap.setAttribute("aria-hidden","true");
+  for(var i=0;i<7;i++){
+   var layer=document.createElement("img");
+   layer.src="assets/real-motors-watermark.png";
+   layer.alt="";
+   layer.draggable=false;
+   layer.className=i===6?"rm-logo-face":"rm-logo-side";
+   layer.style.transform="translateZ("+(i*1.5)+"px)";
+   wrap.appendChild(layer);
+  }
+  document.body.prepend(wrap);
+ }
+ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",addExtrudedLogo,{once:true});
+ else addExtrudedLogo();
+})();
+</script></body></html>

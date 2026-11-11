@@ -1,0 +1,1016 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+:root{--ink:#111113;--panel:#19191d;--red:#e31b32;--red2:#ff394d;--white:#f8f7f5;--muted:#a5a4a7;--line:#333338}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#101012;color:var(--white);font-family:"DM Sans",sans-serif}a{color:inherit;text-decoration:none}button,select,input{font:inherit}.topline{height:32px;background:#09090a;color:#aaa;display:flex;justify-content:space-between;padding:0 5.5%;align-items:center;font-size:9px;letter-spacing:1.6px}.topline span:first-child{color:#eee}.header{height:82px;padding:0 5.5%;display:flex;align-items:center;justify-content:space-between;background:#151518;border-bottom:1px solid #29292d;position:sticky;top:0;z-index:20}.logo{display:flex;gap:10px;align-items:center;font-weight:900;font-size:20px;letter-spacing:-1px}.brand-logo{width:58px;height:58px;object-fit:contain;display:block;filter:drop-shadow(0 0 10px #e31b3230)}.logo .red{color:var(--red)}.logo small{display:block;font-size:7px;letter-spacing:2px;color:#aaa;margin-top:2px}.header nav{display:flex;gap:30px}.header nav a{font-size:10px;font-weight:800;letter-spacing:1.2px;color:#c5c4c6;position:relative;padding:12px 0}.header nav a:after{content:"";position:absolute;bottom:2px;left:0;width:0;height:2px;background:var(--red);transition:.3s}.header nav a:hover:after,.header nav a.active:after{width:100%}.head-actions{display:flex;gap:10px;align-items:center}.search-toggle{background:none;color:white;border:0;font-size:27px}.cart-button{background:var(--red);border:0;padding:12px 18px;color:white;font-size:10px;font-weight:900;letter-spacing:1px;cursor:pointer}.cart-button i{font-style:normal;background:#111;padding:4px 7px;margin-left:8px}.mobile-menu{display:none;background:none;color:white;border:0;font-size:22px}.hero{min-height:590px;padding:65px 8% 45px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;background:radial-gradient(ellipse at 80% 40%,#50111b 0,#201015 26%,#101012 62%)}.hero:before{content:"";position:absolute;inset:-20%;background:repeating-linear-gradient(135deg,transparent 0 80px,#ffffff04 81px 82px);pointer-events:none}.hero:after{content:"";position:absolute;z-index:1;top:-35%;left:54%;width:230px;height:175%;transform:rotate(22deg);background:linear-gradient(90deg,transparent,#e31b3210 20%,#ed1d3640 50%,#e31b3210 80%,transparent);filter:blur(22px);animation:redBeam 8s ease-in-out infinite alternate;pointer-events:none}.hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse at 78% 42%,#8d1025aa 0,transparent 37%);opacity:.85;animation:redPulse 6s ease-in-out infinite alternate}.hero-copy{position:relative;z-index:2;padding-top:30px}.eyebrow{font-size:9px;letter-spacing:2.4px;font-weight:800;color:var(--red2)}.eyebrow i{display:inline-block;width:25px;height:2px;background:var(--red);vertical-align:middle;margin-right:9px}.hero h1{font:900 clamp(65px,8vw,112px)/.83 "Barlow Condensed";letter-spacing:-2px;margin:27px 0}.hero h1 em{font-style:normal;color:var(--red);text-shadow:0 0 35px #e31b3250}.hero-sub{max-width:390px;color:#aaa;line-height:1.8;font-size:13px;margin-bottom:30px}.primary{display:inline-flex;gap:30px;align-items:center;background:var(--red);padding:16px 22px;color:white;font-size:10px;font-weight:900;letter-spacing:1.3px;border:0;cursor:pointer;transition:.3s;box-shadow:0 8px 30px #e31b3230}.primary:hover{background:#ff344b;transform:translateY(-4px);box-shadow:0 14px 35px #e31b3260}.hero-stats{display:flex;gap:35px;margin-top:65px}.hero-stats div{display:flex;flex-direction:column;gap:5px}.hero-stats b{font:800 25px "Barlow Condensed"}.hero-stats span{font-size:8px;letter-spacing:1.4px;color:#888}.hero-visual{position:relative;min-height:430px;display:grid;place-items:center}.hero-visual img{width:100%;height:430px;object-fit:cover;filter:contrast(1.1) saturate(.7);clip-path:polygon(12% 0,100% 0,88% 100%,0 100%);animation:heroIn 1.2s both;mask-image:linear-gradient(90deg,transparent,#000 15%)}.red-ring{position:absolute;width:390px;height:390px;border:1px solid #ed263b80;border-radius:50%;box-shadow:0 0 60px #e31b3220;animation:spin 24s linear infinite}.visual-tag{position:absolute;bottom:22px;left:0;background:#111d;padding:13px 18px;border-left:3px solid var(--red);backdrop-filter:blur(10px);display:flex;align-items:center;gap:12px}.visual-tag img{width:58px;height:58px;object-fit:contain;clip-path:none;mask-image:none;filter:none;animation:none}.visual-tag small{color:var(--red);letter-spacing:2px;font-size:8px}.visual-tag b{display:block;font:800 24px/1 "Barlow Condensed";margin-top:7px}.vertical{position:absolute;right:-22px;top:45%;writing-mode:vertical-rl;font-size:8px;letter-spacing:3px;color:#aaa}.hero-index{position:absolute;right:5.5%;bottom:30px;font:700 13px "Barlow Condensed";color:var(--red)}.hero-index span{color:#777}.ticker{overflow:hidden;background:var(--red);padding:14px 0;white-space:nowrap;font:800 15px "Barlow Condensed";letter-spacing:2px}.ticker div{display:inline-block;animation:marquee 28s linear infinite}.ticker b{padding:0 30px;color:#ffb3bc}.section{padding:85px 8%}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:32px}.section-head h2{font:900 clamp(37px,5vw,58px)/.95 "Barlow Condensed";margin:9px 0}.section-head h2 em{font-style:normal;color:var(--red)}.section-head>span{font-size:9px;letter-spacing:2px;color:#777}.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.category-card{min-height:170px;background:linear-gradient(145deg,#242428,#17171a);border:1px solid #343439;padding:22px;position:relative;transition:.35s;overflow:hidden}.category-card:before{content:"";position:absolute;width:150px;height:150px;background:#e31b3212;right:-70px;bottom:-90px;border-radius:50%;transition:.4s}.category-card:hover{transform:translateY(-8px);border-color:var(--red);box-shadow:0 18px 40px #0008}.category-card:hover:before{transform:scale(2)}.category-card span,.category-card small{display:block;color:#888;font-size:9px}.category-card b{display:block;font:800 23px "Barlow Condensed";margin:30px 0 4px}.category-card i{position:absolute;right:20px;top:18px;color:var(--red);font-style:normal}.brands{background:#17171a}.brand-row{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.brand-row button{background:#202024;border:1px solid #343439;color:#fff;text-align:left;padding:20px 15px;cursor:pointer;transition:.3s}.brand-row button:hover{background:#32151b;border-color:var(--red);transform:translateY(-5px)}.brand-row small,.brand-row span{display:block;color:#888;font-size:8px;letter-spacing:1px}.brand-row b{display:block;font:800 22px "Barlow Condensed";margin:19px 0}.brand-row span{color:var(--red)}.model-pills{display:flex;flex-wrap:wrap;gap:9px}.model-pills button{background:#1d1d21;border:1px solid #39393e;color:#ddd;padding:12px 17px;font-size:10px;cursor:pointer;transition:.25s}.model-pills button:hover{background:var(--red);border-color:var(--red);transform:translateY(-3px)}.muted{color:#888;font-size:12px}.shop{background:#17171a}.tools{display:flex;gap:10px;margin-bottom:25px}.searchbox{display:flex;align-items:center;gap:10px;flex:1;background:#222226;border:1px solid #39393e;padding:0 15px;color:var(--red);font-size:22px}.searchbox input{background:none;border:0;outline:0;color:white;width:100%;padding:14px 0;font-size:11px}.tools select,.clear{background:#222226;border:1px solid #39393e;color:#ddd;padding:0 15px;font-size:10px}.clear{cursor:pointer}.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.product-card{background:#202024;border:1px solid #343439;cursor:pointer;transition:transform .4s,border-color .4s,box-shadow .4s;animation:fadeUp .7s both}.product-card:hover{transform:translateY(-9px);border-color:#d92a40;box-shadow:0 20px 45px #0009}.product-img{height:220px;position:relative;overflow:hidden;background:#29292d}.product-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.75);transition:transform .7s,filter .7s}.product-card:hover .product-img img{transform:scale(1.08);filter:saturate(1.1)}.product-img span{position:absolute;top:13px;left:13px;background:var(--red);padding:6px 9px;font-size:8px;font-weight:900;letter-spacing:1px}.product-img button{position:absolute;bottom:12px;right:12px;width:36px;height:36px;background:#111;color:white;border:1px solid #ffffff55;font-size:17px;transition:.3s}.product-card:hover .product-img button{background:var(--red);transform:rotate(45deg)}.product-info{padding:17px}.product-info>small{font-size:8px;letter-spacing:1.5px;color:var(--red);font-weight:800}.product-info h3{font:700 23px/1.1 "Barlow Condensed";margin:9px 0}.product-info p{font-size:9px;color:#999}.product-info>div{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #39393e;margin-top:15px;padding-top:13px}.product-info>div b{font:800 20px "Barlow Condensed"}.product-info>div span{font-size:8px;color:var(--red);font-weight:900;letter-spacing:1px}.demo-note{font-size:9px;color:#888;letter-spacing:1px;margin-top:25px}.delivery{margin:0 8% 80px;padding:45px;background:linear-gradient(110deg,#31131a,#1b171a 60%,#17171a);border:1px solid #64212d;display:flex;align-items:center;justify-content:space-between}.delivery h2{font:900 45px/.95 "Barlow Condensed";margin:10px 0}.delivery h2 em{font-style:normal;color:var(--red)}.delivery p:last-child{color:#aaa;font-size:12px;max-width:490px;line-height:1.7}.delivery-badge{width:100px;height:100px;border:1px solid var(--red);border-radius:50%;display:grid;place-items:center;text-align:center;font:900 30px "Barlow Condensed";color:var(--red);box-shadow:0 0 35px #e31b3230}.delivery-badge span{font:700 8px "DM Sans";color:white}footer{background:#09090a;border-top:1px solid #2b2b2f;padding:35px 8%;display:flex;align-items:center;justify-content:space-between}footer p,footer>span{color:#888;font-size:10px}.cart-overlay{position:fixed;inset:0;background:#000a;z-index:50;opacity:0;pointer-events:none;transition:.3s}.cart-overlay.open{opacity:1;pointer-events:auto}.cart-panel{position:absolute;right:0;top:0;height:100%;width:min(440px,100%);background:#19191d;padding:28px;transform:translateX(100%);transition:.4s}.cart-overlay.open .cart-panel{transform:translateX(0)}.cart-head{display:flex;justify-content:space-between;border-bottom:1px solid #444;padding-bottom:20px}.cart-head small{color:var(--red);letter-spacing:2px}.cart-head h2{font:800 30px "Barlow Condensed";margin:5px 0}.cart-head button,.cart-item button{background:none;border:0;color:white;cursor:pointer}.cart-foot{position:absolute;bottom:25px;left:28px;right:28px;display:grid;gap:15px}.cart-foot>b{font:800 26px "Barlow Condensed"}.cart-item{display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid #333;font-size:11px}.cart-item small{display:block;color:#999;margin-top:6px}.cart-item button{color:var(--red);font-size:9px}.empty{color:#aaa;padding:35px}.product-page{padding:35px 8% 90px;min-height:70vh}.crumb{font-size:9px;color:#999;letter-spacing:1.5px;margin:15px 0 35px}.detail-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}.detail-image{height:490px;position:relative;background:#202024;overflow:hidden}.detail-image img{width:100%;height:100%;object-fit:cover}.detail-image span{position:absolute;left:18px;bottom:18px;background:var(--red);padding:8px 12px;font-size:8px;letter-spacing:1px}.detail-copy h1{font:900 clamp(44px,5vw,68px)/.95 "Barlow Condensed";margin:15px 0}.partno{font-size:9px;color:#888;letter-spacing:1.4px}.detail-price{font:900 36px "Barlow Condensed";color:var(--red);margin:25px 0}.detail-desc{color:#aaa;font-size:12px;line-height:1.8}.fit-box{background:#202024;border-left:3px solid var(--red);padding:17px;margin:22px 0}.fit-box small,.fit-box b{display:block}.fit-box small{font-size:8px;color:#999;letter-spacing:1.5px;margin-bottom:8px}.fit-box b{font-size:12px}.demo-warning{font-size:9px;color:#e4b2b8;line-height:1.6}.back-link{display:inline-block;margin-left:20px;color:#aaa;font-size:9px;letter-spacing:1px}@keyframes marquee{to{transform:translateX(-50%)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}@keyframes heroIn{from{opacity:0;transform:translateX(30px) scale(1.04)}to{opacity:1;transform:none}}
+@media(max-width:900px){.header nav{gap:13px}.header nav a{font-size:8px}.hero{padding-left:5%;padding-right:5%}.section{padding:65px 5%}.brand-row{grid-template-columns:repeat(3,1fr)}.delivery{margin-left:5%;margin-right:5%}}
+@media(max-width:650px){.topline{font-size:7px;padding:0 12px}.header{height:65px;padding:0 14px}.header nav{display:none;position:absolute;top:65px;left:0;right:0;background:#19191d;padding:15px;flex-direction:column}.menu-open .header nav{display:flex}.mobile-menu{display:block}.search-toggle{display:none}.logo{font-size:16px}.logo>b{width:35px;height:35px}.cart-button{padding:10px;font-size:8px}.hero{display:flex;flex-direction:column;padding:42px 20px 60px}.hero h1{font-size:70px}.hero-visual{min-height:260px}.hero-visual img{height:260px}.red-ring{width:240px;height:240px}.hero-stats{margin-top:35px;gap:20px}.hero-stats b{font-size:19px}.category-grid{grid-template-columns:repeat(2,1fr)}.category-card{min-height:145px;padding:15px}.category-card b{font-size:19px;margin-top:23px}.brand-row{grid-template-columns:repeat(2,1fr)}.section{padding:55px 18px}.section-head h2{font-size:39px}.section-head>span{font-size:7px}.tools{flex-wrap:wrap}.searchbox{flex-basis:100%;min-height:44px}.tools select{height:40px;flex:1;min-width:0}.clear{height:40px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.product-img{height:140px}.product-info{padding:11px}.product-info h3{font-size:17px}.product-info>div b{font-size:16px}.product-info>div span{font-size:7px}.delivery{margin:0 18px 50px;padding:25px;gap:20px}.delivery h2{font-size:33px}.delivery-badge{width:70px;height:70px;font-size:23px;flex-shrink:0}footer{padding:25px 18px;flex-wrap:wrap;gap:15px}.product-page{padding:20px 18px 60px}.detail-grid{grid-template-columns:1fr;gap:25px}.detail-image{height:300px}.detail-copy h1{font-size:48px}.back-link{display:block;margin:20px 0}.cart-panel{padding:20px}.cart-foot{left:20px;right:20px}}
+
+@keyframes redBeam{0%{left:42%;opacity:.35}100%{left:72%;opacity:.9}}@keyframes redPulse{0%{opacity:.45;transform:scale(.95)}100%{opacity:1;transform:scale(1.08)}}
+
+.hero-copy,.hero-visual,.hero-index{z-index:2}.visual-tag{z-index:3}@media(max-width:700px){.brand-logo{width:46px;height:46px}.visual-tag img{width:45px;height:45px}}
+
+/* Bike model photo cards */
+.model-pills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:26px}
+.model-card{position:relative;display:block;height:150px;overflow:hidden;border:1px solid #ffffff22;background:#171719;padding:0;text-align:left;cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s}
+.model-card img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.78) brightness(.72);transition:transform .55s,filter .4s}
+.model-card .model-shade{position:absolute;inset:0;background:linear-gradient(0deg,#09090bf2 0%,#09090b20 65%),linear-gradient(120deg,#e31b3220,transparent 60%)}
+.model-card .model-name{position:absolute;left:16px;bottom:15px;color:#fff;font:800 22px "Barlow Condensed",sans-serif;letter-spacing:.4px}
+.model-card .model-arrow{position:absolute;right:14px;bottom:15px;color:#fff;font-size:17px}
+.model-card:hover{transform:translateY(-5px);border-color:#e31b32;box-shadow:0 12px 28px #e31b3220}
+.model-card:hover img{transform:scale(1.08);filter:saturate(1.08) brightness(.9)}
+@media(max-width:900px){.model-pills{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.model-pills{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.model-card{height:125px}.model-card .model-name{font-size:19px;left:12px;bottom:12px}}
+
+.footer-admin-link{display:inline-flex;align-items:center;gap:8px;margin:22px 0 8px;padding:10px 15px;border:1px solid #ffffff25;color:#a9a9ad;font:700 10px "DM Sans",sans-serif;letter-spacing:1.8px;transition:all .25s}
+.footer-admin-link:hover{color:#fff;border-color:#e31b32;background:#e31b3215;transform:translateY(-2px)}
+
+.brand-logo-frame{display:flex;align-items:center;justify-content:center;width:100%;height:112px;overflow:hidden;margin:0 0 12px;background:linear-gradient(145deg,#f7f7f7,#dedede);border:1px solid #ffffff25;position:relative}
+.brand-tile-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.42);transition:transform .45s ease;mix-blend-mode:multiply}
+#brand-row>button:hover .brand-tile-photo{transform:scale(1.58)}
+#brand-row>button{overflow:hidden}
+#brand-row>button small{display:block;margin:0 0 12px}
+#brand-row>button b{display:block;margin:0 0 16px}
+@media(max-width:600px){.brand-logo-frame{height:96px}}
+
+/* V10 reference-inspired home hero and editable information footer */
+.hero-reference{min-height:505px;display:flex;align-items:center;justify-content:center;text-align:center;padding:48px 6% 62px;background:#070708}
+.hero-reference:before{inset:-35%;background:repeating-linear-gradient(48deg,transparent 0 52px,#09090b 54px 72px,#4b1118 76px 112px,#8f1b25 118px 137px,#0a090a 143px 164px);opacity:.72;animation:stripeDrift 18s linear infinite}
+.hero-reference:after{left:48%;top:-80%;width:180px;height:250%;transform:rotate(-22deg);background:linear-gradient(90deg,transparent,#e31b3220 25%,#ed1d3670 50%,#e31b3218 75%,transparent);filter:blur(18px);animation:redBeam 6s ease-in-out infinite alternate}
+.hero-reference .hero-bg{background:radial-gradient(ellipse at 50% 45%,#9d102b55 0,transparent 58%);animation:redPulse 4s ease-in-out infinite alternate}
+.hero-reference .hero-copy{width:min(900px,100%);padding:0;z-index:3}
+.hero-reference .hero-pill{display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border:1px solid #e31b3260;border-radius:30px;background:#09090ac9;color:#ddd;font-size:10px;letter-spacing:1.7px;margin:0 0 24px}
+.hero-reference .hero-pill i{width:7px;height:7px;border-radius:50%;margin:0;background:var(--red)}
+.hero-reference h1{font:900 clamp(72px,10vw,112px)/.82 "Barlow Condensed";letter-spacing:-1px;margin:0 0 20px;text-shadow:0 8px 35px #000}
+.hero-reference h1 em{color:var(--red);text-shadow:0 0 28px #e31b3245}
+.hero-reference .hero-sub{max-width:none;margin:0 auto 28px;color:#aaa;font:500 clamp(17px,2.4vw,25px) "Barlow Condensed"}
+.hero-cta{display:flex;justify-content:center;gap:13px;flex-wrap:wrap}
+.hero-cta .primary{font:800 17px "Barlow Condensed";letter-spacing:0;padding:13px 18px;gap:25px;border-radius:5px}
+.whatsapp-cta{display:inline-flex;align-items:center;padding:13px 18px;border:1px solid #16894b;color:#eee;border-radius:5px;font:700 17px "Barlow Condensed";background:#080b09b8}
+.whatsapp-cta:hover{background:#0b2718;transform:translateY(-3px)}
+.hero-trust{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:31px;color:#aaa;font:600 13px "Barlow Condensed"}
+.hero-trust span:first-letter{color:var(--red)}
+.hero-reference .hero-index{right:6%;bottom:18px;color:#777;font-size:10px;letter-spacing:2px}
+.about-section{padding:65px 8%;background:#111114;border-top:1px solid #29292d}
+.about-inner{max-width:950px;margin:auto}
+.about-inner h2{font:900 clamp(35px,5vw,52px) "Barlow Condensed";margin:8px 0 14px}
+.about-inner h2 em{font-style:normal;color:var(--red)}
+.about-inner>p:last-child{max-width:750px;color:#aaa;font-size:14px;line-height:1.9}
+.site-footer{padding:42px 8% 0;background:#070708;border-top:1px solid #29292d}
+.footer-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr 1.35fr;gap:45px;max-width:1320px;margin:0 auto 38px}
+.footer-grid h3{font:700 18px "Barlow Condensed";margin:0 0 19px;color:#fff}
+.footer-grid>div>a:not(.footer-brand),#footer-categories a{display:block;color:#999;font:500 14px "Barlow Condensed";margin:0 0 12px}
+.footer-grid a:hover{color:var(--red)}
+.footer-brand{font:900 28px "Barlow Condensed";letter-spacing:1px;color:var(--red)}
+.footer-brand span{color:#eee}
+.footer-about p{max-width:250px;color:#999;font:500 15px/1.5 "Barlow Condensed";margin:12px 0}
+.footer-social{display:flex;gap:12px;margin-top:15px}
+.footer-social a{width:37px;height:37px;border-radius:7px;background:#17171a;display:grid;place-items:center;font-size:19px}
+.footer-contact p{display:flex;gap:13px;color:#999;font:500 14px "Barlow Condensed";margin:0 0 14px}
+.footer-contact p b{color:var(--red);font-size:16px}
+.footer-bottom{max-width:1320px;margin:auto;border-top:1px solid #29292d;padding:17px 0;display:flex;justify-content:space-between;gap:20px;color:#888;font:500 14px "Barlow Condensed"}
+@keyframes stripeDrift{from{background-position:0 0}to{background-position:220px 220px}}
+@media(max-width:760px){.hero-reference{min-height:490px;padding:55px 5%}.hero-reference .hero-pill{font-size:8px;letter-spacing:1px;line-height:1.5}.hero-reference h1{font-size:clamp(66px,17vw,92px)}.hero-trust{gap:12px;font-size:12px}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}.footer-bottom{flex-direction:column}.site-footer{padding-left:6%;padding-right:6%}}
+@media(max-width:440px){.footer-grid{grid-template-columns:1fr}.hero-reference .hero-sub{font-size:19px}}
+.footer-admin-small{font-size:10px;letter-spacing:1.5px;color:#555}.footer-admin-small:hover{color:var(--red)}
+
+.order-customer-fields{display:grid;gap:10px;margin:18px 0}
+.order-customer-fields label{display:grid;gap:5px;color:#aaa;font-size:11px;letter-spacing:.5px;text-transform:uppercase}
+.order-customer-fields input,.order-customer-fields select{width:100%;box-sizing:border-box;background:#0d1013;border:1px solid #343a40;color:#eee;padding:11px 12px;border-radius:3px;font:13px "DM Sans",sans-serif;outline:none}
+.order-customer-fields input:focus,.order-customer-fields select:focus{border-color:var(--red)}
+.cart-total-row{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #333;padding:14px 0;color:#eee}
+.cart-total-row span{font-size:10px;letter-spacing:1px;color:#999}
+.whatsapp-order-btn{width:100%;justify-content:space-between;background:#16834b!important;border-color:#16834b!important}
+.whatsapp-order-btn:hover{background:#1a9b59!important}
+.order-note{display:block;color:#888;font-size:10px;line-height:1.6;margin-top:10px}
+
+
+/* ===== REAL MOTORS / PREMIUM INTERACTION LAYER ===== */
+:root{--rm-pointer-x:50vw;--rm-pointer-y:50vh;--rm-motion-ease:cubic-bezier(.22,.8,.22,1)}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background-color:#08090b}
+body.rm-motion-ready{cursor:auto}
+.rm-cursor-aura{position:fixed;z-index:9998;left:0;top:0;width:430px;height:430px;pointer-events:none;border-radius:50%;background:radial-gradient(circle,rgba(225,20,48,.105) 0%,rgba(225,20,48,.045) 28%,transparent 68%);transform:translate3d(-50%,-50%,0);mix-blend-mode:screen;opacity:0;transition:opacity .35s ease;will-change:transform}
+.rm-cursor-dot{position:fixed;z-index:10000;left:0;top:0;width:7px;height:7px;border-radius:50%;background:#ff2947;box-shadow:0 0 14px #ff2947,0 0 28px #ff294766;pointer-events:none;transform:translate3d(-50%,-50%,0);opacity:0;will-change:transform}
+.rm-cursor-ring{position:fixed;z-index:9999;left:0;top:0;width:34px;height:34px;border:1px solid rgba(255,55,78,.55);border-radius:50%;pointer-events:none;transform:translate3d(-50%,-50%,0);opacity:0;transition:width .25s ease,height .25s ease,border-color .25s ease,background .25s ease;will-change:transform}
+.rm-cursor-ring.is-hover{width:58px;height:58px;border-color:rgba(255,55,78,.9);background:rgba(225,20,48,.07)}
+body.rm-motion-ready .rm-cursor-aura,body.rm-motion-ready .rm-cursor-dot,body.rm-motion-ready .rm-cursor-ring{opacity:1}
+@media(hover:hover) and (pointer:fine){body.rm-motion-ready,body.rm-motion-ready a,body.rm-motion-ready button{cursor:none}}
+.hero{isolation:isolate;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at var(--rm-hero-x,72%) var(--rm-hero-y,42%),rgba(222,19,48,.16),transparent 38%);transition:background .2s ease}
+.hero-copy,.hero-index,.hero-cta,.hero-trust{position:relative;z-index:1}
+.hero-bg{transform:scale(1.035);transition:transform 1.2s var(--rm-motion-ease),filter 1.2s ease;will-change:transform}
+.hero:hover .hero-bg{filter:saturate(1.12) contrast(1.04)}
+.hero-copy>*{animation:rmHeroEnter .85s var(--rm-motion-ease) both}
+.hero-copy>*:nth-child(2){animation-delay:.09s}.hero-copy>*:nth-child(3){animation-delay:.17s}.hero-copy>*:nth-child(4){animation-delay:.25s}.hero-copy>*:nth-child(5){animation-delay:.33s}
+@keyframes rmHeroEnter{from{opacity:0;transform:translate3d(0,22px,0);filter:blur(5px)}to{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}}
+.product-card{transform-style:preserve-3d;will-change:transform;transition:transform .42s var(--rm-motion-ease),border-color .35s ease,box-shadow .4s ease}
+.product-card .product-img img{transition:transform .75s var(--rm-motion-ease),filter .5s ease}
+.product-card:hover .product-img img{transform:scale(1.075);filter:saturate(1.16) contrast(1.04)}
+.product-card .product-info{transform:translateZ(18px)}
+.product-card:hover{border-color:rgba(238,28,57,.55);box-shadow:0 22px 55px rgba(0,0,0,.42),0 0 32px rgba(224,18,48,.09)}
+.brand-row>button,.model-card,.primary,.cart-button,.header nav a{transition:transform .32s var(--rm-motion-ease),border-color .3s ease,background .3s ease,box-shadow .3s ease}
+.brand-row>button:hover,.model-card:hover{transform:translateY(-7px)}
+.primary:hover,.cart-button:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(220,20,48,.24)}
+.rm-reveal{opacity:0;transform:translate3d(0,30px,0);filter:blur(3px);transition:opacity .8s var(--rm-motion-ease),transform .8s var(--rm-motion-ease),filter .8s ease}
+.rm-reveal.rm-visible{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}
+.rm-stagger>*{transition-delay:calc(var(--rm-stagger-index,0)*75ms)}
+.rm-magnetic{position:relative;will-change:transform}
+.header{transition:background .35s ease,border-color .35s ease,box-shadow .35s ease}
+body.rm-scrolled .header{background:rgba(8,9,11,.91);backdrop-filter:blur(18px);box-shadow:0 12px 35px rgba(0,0,0,.24)}
+::selection{background:rgba(232,24,54,.35);color:#fff}
+@media(hover:none),(pointer:coarse){.rm-cursor-aura,.rm-cursor-dot,.rm-cursor-ring{display:none}.rm-reveal{opacity:1;transform:none;filter:none}.product-card{transform:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.rm-cursor-aura,.rm-cursor-dot,.rm-cursor-ring{display:none}.rm-reveal{opacity:1;transform:none;filter:none}}
+
+
+/* V15 — cinematic motion system: layered light, kinetic type, depth and scroll choreography */
+:root{--rm-cinema:red;--rm-glow:rgba(229,22,52,.32)}
+html{scrollbar-color:#c81731 #09090b}
+body{overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.22;background-image:radial-gradient(rgba(255,255,255,.13) .65px,transparent .65px);background-size:5px 5px;mask-image:linear-gradient(180deg,#000,transparent 78%)}
+/* cinematic page intro */
+.rm-cinema-loader{position:fixed;inset:0;z-index:10050;background:#070709;display:grid;place-items:center;transition:opacity .8s cubic-bezier(.7,0,.2,1),visibility .8s;color:#fff;overflow:hidden}
+.rm-cinema-loader:before,.rm-cinema-loader:after{content:"";position:absolute;width:70vw;height:1px;background:linear-gradient(90deg,transparent,#e51b39,transparent);box-shadow:0 0 24px #e51b39;animation:rmLoaderSweep 1.5s ease-in-out infinite}
+.rm-cinema-loader:after{transform:rotate(90deg);animation-delay:.25s}
+.rm-loader-core{position:relative;z-index:1;text-align:center;letter-spacing:5px;font:900 clamp(30px,7vw,66px)/.9 "Barlow Condensed",sans-serif;text-shadow:0 0 32px #e51b3955}
+.rm-loader-core span{display:block;color:#e51b39;font-size:.36em;letter-spacing:8px;margin-top:16px}
+.rm-loader-line{height:2px;width:min(220px,55vw);margin:24px auto 0;background:#27272b;overflow:hidden}
+.rm-loader-line:after{content:"";display:block;height:100%;width:40%;background:#f31f42;box-shadow:0 0 15px #f31f42;animation:rmLoaderBar 1.1s ease-in-out infinite}
+.rm-cinema-loader.rm-loaded{opacity:0;visibility:hidden;pointer-events:none}
+@keyframes rmLoaderSweep{0%,100%{opacity:.15;transform:translateX(-30vw)}50%{opacity:1;transform:translateX(30vw)}}
+@keyframes rmLoaderBar{from{transform:translateX(-110%)}to{transform:translateX(360%)}}
+/* top scroll progress */
+.rm-scroll-progress{position:fixed;z-index:10020;top:0;left:0;width:100%;height:3px;pointer-events:none;background:transparent}
+.rm-scroll-progress span{display:block;width:100%;height:100%;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,#8e071d,#f52245,#ff8a9a);box-shadow:0 0 14px #e51b39;will-change:transform}
+/* hero gets a cinematic animated light field */
+.hero,.hero-reference{isolation:isolate}
+.hero:before,.hero-reference:before{background-size:180% 180%;animation:rmAtmosphere 16s ease-in-out infinite alternate, stripeDrift 22s linear infinite}
+.hero:after,.hero-reference:after{mix-blend-mode:screen}
+@keyframes rmAtmosphere{0%{background-position:0% 50%;filter:hue-rotate(-8deg)}100%{background-position:100% 50%;filter:hue-rotate(8deg)}}
+.hero-copy h1,.hero-reference h1{animation:rmTitleReveal 1.2s cubic-bezier(.16,1,.3,1) both!important}
+.hero-copy h1 em,.hero-reference h1 em{background:linear-gradient(100deg,#fff 5%,#ff8799 25%,#e51b39 48%,#fff 68%,#e51b39 88%);background-size:230% auto;background-clip:text;-webkit-background-clip:text;color:transparent;animation:rmTextShine 5s linear infinite}
+@keyframes rmTitleReveal{from{opacity:0;transform:translateY(42px) scale(.96);filter:blur(12px);letter-spacing:5px}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0);letter-spacing:inherit}}
+@keyframes rmTextShine{to{background-position:230% center}}
+.hero-index{animation:rmIndexPulse 4s ease-in-out infinite}
+@keyframes rmIndexPulse{50%{opacity:.42;transform:translateY(-5px)}}
+/* diagonal laser glint on CTAs and cards */
+.primary,.cart-button,.hero-cta a,.product-card,.brand-row>button,.model-card{position:relative;isolation:isolate;overflow:hidden}
+.primary:after,.cart-button:after,.hero-cta a:after,.product-card:after,.brand-row>button:after,.model-card:after{content:"";position:absolute;z-index:4;inset:-80% auto -80% -45%;width:28%;transform:translateX(-230%) rotate(24deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);pointer-events:none;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.primary:hover:after,.cart-button:hover:after,.hero-cta a:hover:after,.product-card:hover:after,.brand-row>button:hover:after,.model-card:hover:after{transform:translateX(650%) rotate(24deg)}
+.product-card:before,.brand-row>button:before,.model-card:before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(130deg,transparent 15%,rgba(255,49,78,.7),transparent 55%,rgba(255,255,255,.12));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s;pointer-events:none;z-index:5}
+.product-card:hover:before,.brand-row>button:hover:before,.model-card:hover:before{opacity:1}
+/* more pronounced but smooth scroll choreography */
+.rm-reveal{transform:translate3d(0,58px,0) scale(.975);filter:blur(7px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1),filter .9s ease}
+.rm-reveal.rm-visible{transform:translate3d(0,0,0) scale(1)}
+.rm-stagger>*:nth-child(1){transition-delay:0ms}.rm-stagger>*:nth-child(2){transition-delay:90ms}.rm-stagger>*:nth-child(3){transition-delay:180ms}.rm-stagger>*:nth-child(4){transition-delay:270ms}.rm-stagger>*:nth-child(5){transition-delay:360ms}.rm-stagger>*:nth-child(6){transition-delay:450ms}
+.section-head:after{content:"";display:block;width:58px;height:2px;margin-top:16px;background:linear-gradient(90deg,#ed1c3d,transparent);transform:scaleX(0);transform-origin:left;transition:transform 1s .2s cubic-bezier(.16,1,.3,1)}
+.section-head.rm-visible:after{transform:scaleX(1)}
+/* floating ambient red light, never blocks content */
+.hero-bg:after{content:"";position:absolute;inset:-20%;pointer-events:none;background:radial-gradient(circle at 22% 42%,#e51b3925,transparent 25%),radial-gradient(circle at 76% 65%,#e51b391c,transparent 29%);animation:rmFloatLight 10s ease-in-out infinite alternate}
+@keyframes rmFloatLight{from{transform:translate3d(-2%,1%,0) scale(.96)}to{transform:translate3d(3%,-2%,0) scale(1.08)}}
+/* detail view and cart transitions */
+.detail-image img{transition:transform 1s cubic-bezier(.16,1,.3,1),filter .7s}
+.detail-image:hover img{transform:scale(1.055) rotate(-1deg);filter:saturate(1.15)}
+#cart-overlay{transition:opacity .45s ease,visibility .45s ease}
+#cart-overlay.open .cart-panel{animation:rmDrawerIn .65s cubic-bezier(.16,1,.3,1) both}
+@keyframes rmDrawerIn{from{transform:translateX(70px);opacity:.3;filter:blur(8px)}to{transform:translateX(0);opacity:1;filter:blur(0)}}
+.header nav a{position:relative}
+.header nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-8px;height:2px;background:#ed1c3d;transition:right .35s cubic-bezier(.16,1,.3,1)}
+.header nav a:hover:after{right:0}
+@media(hover:none),(pointer:coarse){.rm-cinema-loader:before,.rm-cinema-loader:after{animation-duration:2.2s}.product-card:after,.brand-row>button:after,.model-card:after{display:none}}
+@media(prefers-reduced-motion:reduce){.rm-cinema-loader{display:none!important}.rm-scroll-progress{display:none}.hero-copy h1,.hero-reference h1,.hero-copy h1 em,.hero-reference h1 em{animation:none!important}.hero-bg:after{animation:none}}
+
+
+/* V17 ULTIMATE SMOOTH FINISH — preserve all V15 effects, reduce scroll jank */
+/* Reveal transitions use compositor-friendly properties; keep the cinematic depth. */
+.rm-reveal{filter:none!important;transform:translate3d(0,42px,0) scale(.99);transition:opacity .72s cubic-bezier(.2,.75,.25,1),transform .82s cubic-bezier(.2,.75,.25,1)!important;}
+.rm-reveal.rm-visible{filter:none!important;transform:translate3d(0,0,0) scale(1);}
+.rm-stagger>*{transition-delay:0ms!important;}
+.rm-stagger.rm-visible>*{animation:rmV17Stagger .58s cubic-bezier(.2,.75,.25,1) both;}
+.rm-stagger.rm-visible>*:nth-child(2){animation-delay:.065s}.rm-stagger.rm-visible>*:nth-child(3){animation-delay:.13s}.rm-stagger.rm-visible>*:nth-child(4){animation-delay:.195s}.rm-stagger.rm-visible>*:nth-child(5){animation-delay:.26s}.rm-stagger.rm-visible>*:nth-child(6){animation-delay:.325s}
+@keyframes rmV17Stagger{from{opacity:.2;transform:translate3d(0,16px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+/* Keep the cursor aura, glowing dot/ring, magnetic attraction and 3D card tilt. */
+.rm-cursor-aura,.rm-cursor-dot,.rm-cursor-ring{display:block!important}
+.product-card{will-change:auto!important;transform:perspective(1000px) rotateX(var(--rm-tilt-x,0deg)) rotateY(var(--rm-tilt-y,0deg));transition:transform .32s cubic-bezier(.2,.75,.25,1),box-shadow .35s,border-color .3s!important;}
+.product-card:hover{box-shadow:0 18px 42px #0009,0 0 20px #e31b3220!important;}
+.rm-magnetic{will-change:auto!important;transition:transform .22s cubic-bezier(.2,.75,.25,1)!important;}
+/* Keep the red cinematic atmosphere, but animate only a lightweight overlay. */
+.hero-bg:after{animation:rmV17Ambient 12s ease-in-out infinite alternate!important;will-change:transform,opacity;}
+@keyframes rmV17Ambient{from{transform:translate3d(-1%,1%,0) scale(1);opacity:.55}to{transform:translate3d(1%,-1%,0) scale(1.035);opacity:.82}}
+.hero:before,.hero-reference:before{animation:none!important;}
+.rm-scroll-progress{height:3px!important;}
+.rm-scroll-progress span{box-shadow:0 0 9px #e51b39a0,0 0 18px #e51b3950!important;}
+#cart-overlay.open .cart-panel{animation:rmDrawerIn .48s cubic-bezier(.2,.75,.25,1) both!important;}
+@media(hover:none),(pointer:coarse){.rm-cursor-aura,.rm-cursor-dot,.rm-cursor-ring{display:none!important}.rm-reveal{opacity:1;transform:none!important;transition:none!important}.rm-stagger.rm-visible>*{animation:none!important}.product-card{transform:none!important}}
+@media(prefers-reduced-motion:reduce){.rm-reveal,.rm-stagger.rm-visible>*{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}.hero-bg:after{animation:none!important}.rm-scroll-progress{display:none!important}}
+
+/* V18 — richer page choreography + redesigned precision cursor */
+.rm-cursor-aura{width:300px;height:300px;background:radial-gradient(circle,rgba(232,20,52,.13),rgba(232,20,52,.045) 34%,transparent 70%);mix-blend-mode:screen}
+.rm-cursor-dot{width:5px;height:5px;background:#fff;box-shadow:0 0 8px #fff,0 0 18px #f21d43,0 0 30px #f21d4377}
+.rm-cursor-ring{width:44px;height:44px;border:1px solid rgba(255,50,77,.82);background:rgba(12,8,10,.12);box-shadow:0 0 0 5px rgba(238,24,55,.055),inset 0 0 14px rgba(238,24,55,.08);transition:width .28s cubic-bezier(.2,.8,.2,1),height .28s cubic-bezier(.2,.8,.2,1),border-color .28s,background .28s,box-shadow .28s}
+.rm-cursor-ring:before,.rm-cursor-ring:after{content:"";position:absolute;inset:5px;border:1px dashed rgba(255,90,110,.35);border-radius:50%;transition:transform .35s ease}
+.rm-cursor-ring:after{inset:-7px;border:1px solid rgba(239,24,57,.18);}
+.rm-cursor-ring.is-hover{width:64px;height:64px;border-color:#ff6379;background:rgba(226,18,48,.12);box-shadow:0 0 0 8px rgba(238,24,55,.07),0 0 25px rgba(238,24,55,.2)}
+.rm-cursor-ring.is-hover:before{transform:rotate(45deg) scale(.82)}
+.rm-cursor-cross{position:absolute;left:50%;top:50%;display:block;background:#ff6379;opacity:.85;transform:translate(-50%,-50%)}
+.rm-cursor-cross-x{width:76px;height:1px}.rm-cursor-cross-y{width:1px;height:76px}
+.rm-cursor-core{position:absolute;left:50%;top:50%;width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:0 0 9px #ff3154;transform:translate(-50%,-50%)}
+.rm-cursor-label{position:absolute;left:50%;top:50%;font:800 7px/1 'DM Sans',sans-serif;letter-spacing:1px;color:#fff;opacity:0;transform:translate(-50%,-50%) scale(.7);transition:opacity .2s,transform .2s}
+.rm-cursor-ring.is-hover .rm-cursor-label{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.rm-cursor-ring.is-hover .rm-cursor-cross{opacity:0}
+/* Scroll reveals now cover the complete catalogue, delivery panel and content blocks. */
+.section.rm-reveal,.delivery.rm-reveal,.about-section.rm-reveal{transition:opacity .78s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)!important}
+.section-head.rm-reveal{transition-delay:.04s!important}
+.category-card.rm-reveal,.product-card.rm-reveal,.brand-row.rm-reveal,.model-pills.rm-reveal{transition-duration:.72s!important}
+.category-card.rm-visible,.product-card.rm-visible{will-change:auto}
+.tools.rm-visible{animation:rmToolsSettle .65s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rmToolsSettle{from{opacity:.65;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+/* A moving light sweep follows section entry; static after the reveal to avoid permanent GPU work. */
+.section-head.rm-visible:after{animation:rmSectionFlash 1.15s .15s ease-out both}
+@keyframes rmSectionFlash{0%{box-shadow:0 0 0 rgba(239,24,57,0)}45%{box-shadow:0 0 18px rgba(239,24,57,.7)}100%{box-shadow:0 0 4px rgba(239,24,57,.12)}}
+.category-card,.delivery,.tools,.demo-note{transition:transform .65s cubic-bezier(.2,.8,.2,1),opacity .65s ease,border-color .3s,box-shadow .3s}
+.category-card:hover{transform:translateY(-8px);border-color:#e51b39;box-shadow:0 18px 42px rgba(0,0,0,.35),0 0 22px rgba(229,27,57,.1)}
+.product-card .product-img img{will-change:auto}
+@media(hover:none),(pointer:coarse){.rm-cursor-ring:before,.rm-cursor-ring:after,.rm-cursor-cross,.rm-cursor-core,.rm-cursor-label{display:none}}
+@media(prefers-reduced-motion:reduce){.section-head.rm-visible:after{animation:none}.tools.rm-visible{animation:none}}
+
+
+/* V19 — complete-page cinematic reveals + readable dark menus */
+:root{color-scheme:dark}
+.tools select,.order-customer-fields select{
+  color:#f7f7f8!important;
+  background-color:#202024!important;
+  color-scheme:dark;
+}
+.tools select option,.order-customer-fields select option{
+  color:#f7f7f8!important;
+  background:#17171b!important;
+}
+.searchbox input{color:#fff!important;caret-color:#ed1c3d}
+.searchbox input::placeholder{color:#a4a4aa!important;opacity:1}
+.searchbox:focus-within{
+  border-color:#ed1c3d;
+  box-shadow:0 0 0 1px #ed1c3d55,0 0 24px #ed1c3d20;
+  transition:border-color .25s,box-shadow .3s;
+}
+.cart-panel{
+  color:#f5f5f6!important;
+  background:linear-gradient(155deg,#1d1d22 0%,#111114 72%,#1a0c10 100%)!important;
+  border-left:1px solid #ed1c3d55;
+}
+.cart-panel h2,.cart-panel p,.cart-panel span,.cart-panel label,
+.cart-panel b,.cart-panel .empty,.cart-panel .order-note{color:#f4f4f5}
+.cart-head small,.cart-item small,.cart-total-row span,.order-note{color:#a8a8ae!important}
+.cart-item{border-bottom-color:#39393f!important}
+.order-customer-fields label{color:#d5d5da!important}
+.order-customer-fields input,.order-customer-fields select{
+  color:#fff!important;background:#0b0b0e!important;
+  border-color:#45454d!important;
+}
+.order-customer-fields input::placeholder{color:#8f8f98!important;opacity:1}
+.order-customer-fields input:focus,.order-customer-fields select:focus{
+  border-color:#ed1c3d!important;box-shadow:0 0 0 2px #ed1c3d22;
+}
+.cart-head button{color:#fff!important}
+.cart-overlay.open{backdrop-filter:blur(5px)}
+.cart-panel{overflow-y:auto;overscroll-behavior:contain}
+.rm-cart-enter{animation:rmCartItemEnter .48s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--rm-cart-delay,0ms)}
+@keyframes rmCartItemEnter{from{opacity:0;transform:translate3d(22px,0,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+
+/* Reveal all major page regions as they enter the viewport. */
+.rm-reveal{
+  opacity:0;
+  transform:translate3d(0,34px,0) scale(.992);
+  transition:opacity .72s cubic-bezier(.2,.8,.2,1),transform .78s cubic-bezier(.2,.8,.2,1)!important;
+}
+.rm-reveal.rm-visible{opacity:1;transform:translate3d(0,0,0) scale(1)}
+.category-card.rm-reveal,.brand-row>*.rm-reveal,.model-pills>*.rm-reveal,
+.product-card.rm-reveal,.footer-grid>*.rm-reveal{
+  transition-duration:.66s!important;
+}
+.category-card:nth-child(2),.brand-row>*:nth-child(2),.model-pills>*:nth-child(2),.product-card:nth-child(2){transition-delay:.07s}
+.category-card:nth-child(3),.brand-row>*:nth-child(3),.model-pills>*:nth-child(3),.product-card:nth-child(3){transition-delay:.14s}
+.category-card:nth-child(4),.brand-row>*:nth-child(4),.model-pills>*:nth-child(4),.product-card:nth-child(4){transition-delay:.21s}
+.category-card:nth-child(5),.brand-row>*:nth-child(5),.model-pills>*:nth-child(5),.product-card:nth-child(5){transition-delay:.28s}
+.category-card:nth-child(6),.brand-row>*:nth-child(6),.model-pills>*:nth-child(6),.product-card:nth-child(6){transition-delay:.35s}
+.delivery.rm-reveal,.about-inner.rm-reveal,.footer-bottom.rm-reveal{
+  transition-duration:.9s!important;
+}
+.section-head.rm-visible h2,.delivery.rm-visible h2,.about-inner.rm-visible h2{
+  animation:rmHeadingSettle .72s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes rmHeadingSettle{from{opacity:.35;transform:translate3d(0,12px,0);letter-spacing:2px}to{opacity:1;transform:translate3d(0,0,0);letter-spacing:normal}}
+.category-card,.brand-row>button,.model-card,.product-card,.delivery,.footer-grid>div{
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .35s;
+}
+.brand-row>button:hover,.model-card:hover{
+  transform:translate3d(0,-7px,0);
+  border-color:#ed1c3d!important;
+  box-shadow:0 16px 36px #0008,0 0 22px #ed1c3d20;
+}
+.delivery:hover{border-color:#ed1c3d88;box-shadow:0 18px 45px #0007,0 0 24px #ed1c3d12}
+.footer-grid a{transition:color .25s,transform .25s}
+.footer-grid a:hover{color:#ff536b!important;transform:translateX(3px)}
+.ticker>div{will-change:transform}
+@media(hover:none),(pointer:coarse){
+ .rm-reveal{opacity:1!important;transform:none!important;transition:none!important}
+ .rm-cart-enter{animation:none!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .rm-reveal{opacity:1!important;transform:none!important;transition:none!important}
+ .rm-cart-enter{animation:none!important}
+}
+
+
+/* V20 — native pointer retained; subtle animated red cursor-follow light only. */
+@media(hover:hover) and (pointer:fine){
+ body,body a,body button,body input,body select{cursor:auto!important}
+ body button,body a{cursor:pointer!important}
+ .rm-cursor-dot,.rm-cursor-ring{display:none!important}
+ .rm-cursor-aura{display:block!important;position:fixed;z-index:9997;left:0;top:0;width:190px;height:190px;border-radius:50%;pointer-events:none;opacity:0;transform:translate3d(-50%,-50%,0);background:radial-gradient(circle,rgba(235,20,52,.12) 0%,rgba(235,20,52,.055) 34%,transparent 72%);mix-blend-mode:screen;transition:opacity .25s ease;will-change:transform}
+ body.rm-motion-ready .rm-cursor-aura{opacity:1}
+}
+@media(hover:none),(pointer:coarse){.rm-cursor-aura,.rm-cursor-dot,.rm-cursor-ring{display:none!important}}
+
+
+/* V21: independent navigation pages, existing animations preserved */
+.rm-page-banner{padding:75px max(8%,24px) 45px;background:radial-gradient(ellipse at 85% 10%,rgba(227,20,54,.18),transparent 50%),#111115;border-bottom:1px solid rgba(255,255,255,.08)}
+.rm-page-banner h1{font-size:clamp(40px,7vw,90px);font-weight:900;line-height:1;margin:15px 0;letter-spacing:-.045em;color:#fff}
+.rm-page-banner>p:last-child{color:#aaa;max-width:640px}
+.rm-page-categories .hero,.rm-page-categories .ticker,.rm-page-categories #brands,.rm-page-categories #models{display:none!important}
+.rm-page-brands .hero,.rm-page-brands .ticker,.rm-page-brands #categories,.rm-page-brands #models{display:none!important}
+.rm-page-models .hero,.rm-page-models .ticker,.rm-page-models #categories,.rm-page-models #brands{display:none!important}
+.rm-page-index #categories,.rm-page-index #brands,.rm-page-index #models{display:none!important}
+.header nav a.active{color:#fff}
+@media(max-width:700px){.rm-page-banner{padding:48px 20px 32px}}
+
+
+/* ==========================================================
+   REAL MOTORS V22 — subtle animated 3D brand watermark
+   Applied consistently to every storefront, product and admin page.
+   ========================================================== */
+body{
+  position:relative;
+  isolation:isolate;
+  background-color:#09090b;
+}
+body::before{
+  content:"";
+  position:fixed;
+  z-index:-1;
+  pointer-events:none;
+  width:min(43vw,520px);
+  height:min(43vw,520px);
+  min-width:280px;
+  min-height:280px;
+  left:50%;
+  top:52%;
+  transform:translate3d(-50%,-50%,0);
+  background-image:url("assets/real-motors-watermark.png");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+  opacity:.075;
+  filter:drop-shadow(0 0 22px rgba(227,27,50,.16)) saturate(.9);
+  transform-style:preserve-3d;
+  animation:rmLogoFloat3D 18s ease-in-out infinite;
+  will-change:transform,opacity;
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 50% 48%,rgba(227,27,50,.075),transparent 42%),
+    radial-gradient(ellipse at 12% 85%,rgba(227,27,50,.035),transparent 35%);
+  opacity:.8;
+}
+@keyframes rmLogoFloat3D{
+  0%,100%{
+    transform:translate3d(-50%,-50%,0) perspective(1000px) rotateY(-9deg) rotateX(3deg) scale(.96);
+    opacity:.055;
+  }
+  25%{
+    transform:translate3d(-50%,-51.5%,0) perspective(1000px) rotateY(0deg) rotateX(-2deg) scale(1);
+    opacity:.085;
+  }
+  50%{
+    transform:translate3d(-50%,-50%,0) perspective(1000px) rotateY(9deg) rotateX(3deg) scale(1.035);
+    opacity:.07;
+  }
+  75%{
+    transform:translate3d(-50%,-48.5%,0) perspective(1000px) rotateY(0deg) rotateX(-3deg) scale(1);
+    opacity:.09;
+  }
+}
+@media(max-width:700px){
+  body::before{width:min(78vw,390px);height:min(78vw,390px);opacity:.065;animation-duration:22s}
+}
+@media(prefers-reduced-motion:reduce){
+  body::before{animation:none;transform:translate3d(-50%,-50%,0);opacity:.065}
+}
+
+
+/* V23 — let the brand watermark show through the page surfaces */
+.shop,
+.rm-page-banner,
+.rm-page-categories .section,
+.rm-page-brands .section,
+.rm-page-models .section,
+.rm-page-index .section{
+  background-color:transparent!important;
+  background-image:none!important;
+}
+.shop{background:transparent!important}
+.rm-page-banner{
+  background:radial-gradient(ellipse at 85% 10%,rgba(227,20,54,.075),transparent 55%)!important;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.delivery{
+  background:linear-gradient(110deg,rgba(49,19,26,.48),rgba(27,23,26,.40) 60%,rgba(23,23,26,.42))!important;
+}
+/* Place watermark between the page background and all interactive content. */
+body::before{
+  z-index:0;
+  width:min(48vw,590px);
+  height:min(48vw,590px);
+  opacity:.105;
+  filter:drop-shadow(0 0 28px rgba(227,27,50,.22)) saturate(1.08);
+  animation:rmLogoFullRotation 30s linear infinite;
+}
+body::after{z-index:-1}
+body>*{position:relative;z-index:1}
+@keyframes rmLogoFullRotation{
+  0%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(0deg) rotateX(0deg) rotateZ(-4deg) scale(.96);
+    opacity:.075;
+  }
+  25%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(90deg) rotateX(4deg) rotateZ(0deg) scale(1);
+    opacity:.11;
+  }
+  50%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(180deg) rotateX(0deg) rotateZ(4deg) scale(1.025);
+    opacity:.085;
+  }
+  75%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(270deg) rotateX(-4deg) rotateZ(0deg) scale(1);
+    opacity:.11;
+  }
+  100%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(360deg) rotateX(0deg) rotateZ(-4deg) scale(.96);
+    opacity:.075;
+  }
+}
+@media(max-width:700px){
+  body::before{width:min(82vw,420px);height:min(82vw,420px);opacity:.075;animation-duration:36s}
+}
+@media(prefers-reduced-motion:reduce){
+  body::before{animation:none;transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(0deg);opacity:.075}
+}
+
+
+/* V24 — remove coloured panels/surfaces; keep only readable content and controls */
+.shop,
+.section,
+.rm-page-banner,
+.rm-page-index .shop,
+.rm-page-categories .section,
+.rm-page-brands .section,
+.rm-page-models .section,
+.category-card,
+.brand-card,
+.model-card,
+.product-card,
+.delivery,
+footer,
+.tools,
+.searchbox,
+.empty-state,
+.rm-page-banner,
+.admin-wrap,
+.panel{
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  box-shadow:none;
+}
+/* Keep text, buttons, form controls and navigation readable/visible. */
+button,
+.cart-button,
+.search-toggle,
+input,
+select,
+textarea,
+nav a,
+.rm-primary-btn,
+.add-button,
+a.button{
+  opacity:1;
+}
+.category-card,
+.brand-card,
+.model-card,
+.product-card{
+  border-color:rgba(255,255,255,.13);
+}
+.category-card:hover,
+.brand-card:hover,
+.model-card:hover,
+.product-card:hover{
+  background:rgba(227,27,50,.045)!important;
+  border-color:rgba(227,27,50,.6);
+}
+.delivery{border-color:rgba(227,27,50,.35)}
+footer{border-top-color:rgba(255,255,255,.10)}
+
+/* V25: About / Who We Are panel is transparent, preserving readable text and existing effects. */
+.about-section, section.about-section, .about-inner { background:transparent!important; background-color:transparent!important; background-image:none!important; box-shadow:none!important; }
+.about-section { border-top-color:rgba(255,255,255,.08)!important; }
+
+
+/* V26 — keep the section tint, but make it much more transparent */
+.about-section,
+section.about-section,
+.about-inner{
+  background:rgba(24,24,29,.30)!important;
+  background-color:rgba(24,24,29,.30)!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  backdrop-filter:blur(2px);
+}
+.about-section{border-top-color:rgba(255,255,255,.07)!important}
+
+/* Animated white + red light trails behind the rotating REAL MOTORS watermark */
+.rm-light-trails{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+  pointer-events:none;
+  contain:strict;
+}
+.rm-light-trails i{
+  position:absolute;
+  display:block;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  opacity:0;
+  background:#fff;
+  box-shadow:0 0 9px 3px rgba(255,255,255,.75),0 0 24px 7px rgba(255,255,255,.22);
+  animation:rmLightRun 9s linear infinite;
+  will-change:transform,opacity;
+}
+.rm-light-trails i::after{
+  content:"";
+  position:absolute;
+  width:110px;
+  height:2px;
+  right:3px;
+  top:2px;
+  transform:translateX(-2px);
+  transform-origin:right center;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.0),rgba(255,255,255,.85));
+  filter:blur(1px);
+}
+.rm-light-trails i:nth-child(2n){
+  width:6px;height:6px;
+  background:#ff2948;
+  box-shadow:0 0 10px 3px rgba(255,30,65,.85),0 0 26px 8px rgba(255,30,65,.28);
+}
+.rm-light-trails i:nth-child(2n)::after{
+  background:linear-gradient(90deg,transparent,rgba(255,35,70,0),rgba(255,35,70,.9));
+}
+.rm-light-trails i:nth-child(1){top:18%;left:-12%;animation-duration:11s;animation-delay:-2s}
+.rm-light-trails i:nth-child(2){top:34%;left:-15%;animation-duration:13s;animation-delay:-8s}
+.rm-light-trails i:nth-child(3){top:57%;left:-10%;animation-duration:10s;animation-delay:-5s}
+.rm-light-trails i:nth-child(4){top:73%;left:-18%;animation-duration:14s;animation-delay:-10s}
+.rm-light-trails i:nth-child(5){top:88%;left:-14%;animation-duration:12s;animation-delay:-4s}
+.rm-light-trails i:nth-child(6){top:45%;left:-20%;animation-duration:15s;animation-delay:-12s}
+@keyframes rmLightRun{
+  0%{transform:translate3d(0,0,0) scale(.55);opacity:0}
+  8%{opacity:.9}
+  45%{opacity:.65}
+  92%{opacity:.75}
+  100%{transform:translate3d(125vw,-5vh,0) scale(1.15);opacity:0}
+}
+/* Logo remains on top of the travelling lights, but behind all page content */
+body::before{z-index:1}
+body::after{z-index:-1}
+body>*{position:relative;z-index:2}
+@media(max-width:700px){
+  .rm-light-trails i{transform:scale(.7)}
+  .rm-light-trails i::after{width:65px}
+}
+@media(prefers-reduced-motion:reduce){
+  .rm-light-trails{display:none!important}
+}
+
+
+/* V27 — soft snowfall particles, layered BEHIND the rotating logo */
+.rm-light-trails{
+  position:fixed!important;
+  inset:0!important;
+  z-index:0!important;
+  overflow:hidden!important;
+  pointer-events:none!important;
+  contain:strict;
+}
+.rm-light-trails i{
+  position:absolute!important;
+  display:block!important;
+  top:-12vh!important;
+  left:var(--snow-x,50%)!important;
+  width:var(--snow-size,3px)!important;
+  height:var(--snow-size,3px)!important;
+  border-radius:50%!important;
+  opacity:0!important;
+  background:#fff!important;
+  box-shadow:0 0 5px 1px rgba(255,255,255,.5),0 0 11px 2px rgba(255,255,255,.12)!important;
+  animation:rmSnowFall var(--snow-duration,14s) linear var(--snow-delay,0s) infinite!important;
+  will-change:transform,opacity;
+}
+.rm-light-trails i::after{display:none!important}
+.rm-light-trails i:nth-child(3n){
+  background:#ff304d!important;
+  box-shadow:0 0 5px 1px rgba(255,48,77,.62),0 0 12px 2px rgba(255,48,77,.16)!important;
+}
+@keyframes rmSnowFall{
+  0%{transform:translate3d(0,-8vh,0) scale(.65);opacity:0}
+  9%{opacity:var(--snow-opacity,.55)}
+  55%{transform:translate3d(var(--snow-drift,35px),52vh,0) scale(1);opacity:var(--snow-opacity,.55)}
+  92%{opacity:var(--snow-opacity,.42)}
+  100%{transform:translate3d(calc(var(--snow-drift,35px) * -0.55),112vh,0) scale(.8);opacity:0}
+}
+/* Explicit stacking order: snowfall < rotating logo < readable page content */
+.rm-light-trails{z-index:0!important}
+body::before{z-index:1!important}
+body::after{z-index:-1!important}
+body>*{position:relative;z-index:2}
+@media(max-width:700px){
+  .rm-light-trails i{box-shadow:0 0 4px 1px rgba(255,255,255,.35)!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .rm-light-trails{display:none!important}
+}
+
+
+/* V28 FIX — visible snowfall as a true page-background layer.
+   Snow is painted on the body background, so section panels cannot hide it.
+   The rotating logo remains on the layer above the snow. */
+body{
+  background-color:#09090b!important;
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,.78) 0 1px,transparent 1.8px),
+    radial-gradient(circle,rgba(255,255,255,.48) 0 1.3px,transparent 2px),
+    radial-gradient(circle,rgba(255,45,72,.68) 0 1.2px,transparent 2px),
+    radial-gradient(circle,rgba(255,255,255,.34) 0 1px,transparent 1.8px)!important;
+  background-size:137px 173px,211px 239px,283px 307px,347px 389px!important;
+  background-position:0 -180px,35px -90px,80px -250px,120px -130px!important;
+  animation:rmSnowBackground 18s linear infinite!important;
+}
+@keyframes rmSnowBackground{
+  0%{background-position:0 -180px,35px -90px,80px -250px,120px -130px}
+  100%{background-position:48px 900px,-42px 1040px,125px 1160px,-85px 980px}
+}
+/* Hide the previous DOM trail dots: the new snow is part of the background. */
+.rm-light-trails{display:none!important}
+/* Keep the brand watermark above the snowfall and behind all content. */
+body::before{z-index:0!important}
+body::after{z-index:-1!important}
+body>*{position:relative;z-index:2}
+@media(prefers-reduced-motion:reduce){
+  body{animation:none!important}
+}
+
+
+/* V29 — actual animated snowfall canvas layer, behind the brand watermark */
+body{
+  background:#09090b!important;
+  background-image:none!important;
+}
+#rm-snow-canvas{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+  pointer-events:none;
+  display:block;
+}
+body::after{z-index:-2!important}
+/* Keep the REAL MOTORS logo above the falling snow.
+   Rotate around its face so the logo never flips backwards. */
+body::before{
+  z-index:0!important;
+  animation:rmLogoReadableSpin 42s linear infinite!important;
+  opacity:.12!important;
+}
+@keyframes rmLogoReadableSpin{
+  0%{transform:translate3d(-50%,-50%,0) perspective(1000px) rotateZ(-3deg) rotateY(-5deg) scale(.97)}
+  25%{transform:translate3d(-50%,-50%,0) perspective(1000px) rotateZ(87deg) rotateY(0deg) scale(1)}
+  50%{transform:translate3d(-50%,-50%,0) perspective(1000px) rotateZ(177deg) rotateY(5deg) scale(1.02)}
+  75%{transform:translate3d(-50%,-50%,0) perspective(1000px) rotateZ(267deg) rotateY(0deg) scale(1)}
+  100%{transform:translate3d(-50%,-50%,0) perspective(1000px) rotateZ(357deg) rotateY(-5deg) scale(.97)}
+}
+@media(max-width:700px){
+  body::before{animation-duration:54s!important;opacity:.085!important}
+}
+@media(prefers-reduced-motion:reduce){
+  body::before{animation:none!important;transform:translate3d(-50%,-50%,0)!important}
+}
+
+
+/* V30 — remove snowfall completely; refine only the REAL MOTORS watermark */
+#rm-snow-canvas,.rm-light-trails{display:none!important}
+body{
+  background:#09090b!important;
+  background-image:none!important;
+  animation:none!important;
+}
+body::before{
+  z-index:0!important;
+  opacity:.14!important;
+  transform-style:preserve-3d!important;
+  backface-visibility:visible!important;
+  animation:rmLogoTrue3DRock 12s ease-in-out infinite!important;
+  will-change:transform,filter;
+  filter:drop-shadow(0 0 22px rgba(227,27,50,.20)) saturate(1.12)!important;
+}
+@keyframes rmLogoTrue3DRock{
+  0%,100%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px)
+      rotateX(-12deg) rotateY(-24deg) rotateZ(-2deg) scale(.96);
+  }
+  25%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px)
+      rotateX(7deg) rotateY(-8deg) rotateZ(0deg) scale(1);
+  }
+  50%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px)
+      rotateX(12deg) rotateY(24deg) rotateZ(2deg) scale(1.025);
+  }
+  75%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px)
+      rotateX(-7deg) rotateY(8deg) rotateZ(0deg) scale(1);
+  }
+}
+@media(max-width:700px){
+  body::before{animation-duration:16s!important;opacity:.10!important}
+}
+@media(prefers-reduced-motion:reduce){
+  body::before{animation:none!important;transform:translate3d(-50%,-50%,0)!important}
+}
+
+
+/* V31 — restore the exact V27 rotating watermark motion; no snowfall */
+#rm-snow-canvas,.rm-light-trails{display:none!important}
+body::before{
+  animation:rmLogoV27Rotation 30s ease-in-out infinite!important;
+  opacity:.105!important;
+  transform-style:preserve-3d!important;
+  backface-visibility:visible!important;
+}
+@keyframes rmLogoV27Rotation{
+  0%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(0deg) rotateX(0deg) rotateZ(-4deg) scale(.96);
+    opacity:.075;
+  }
+  25%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(90deg) rotateX(4deg) rotateZ(0deg) scale(1);
+    opacity:.11;
+  }
+  50%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(180deg) rotateX(0deg) rotateZ(4deg) scale(1.025);
+    opacity:.085;
+  }
+  75%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(270deg) rotateX(-4deg) rotateZ(0deg) scale(1);
+    opacity:.11;
+  }
+  100%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(360deg) rotateX(0deg) rotateZ(-4deg) scale(.96);
+    opacity:.075;
+  }
+}
+@media(max-width:700px){
+  body::before{animation-duration:36s!important;opacity:.075!important}
+}
+@media(prefers-reduced-motion:reduce){
+  body::before{animation:none!important;transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(0deg)!important;opacity:.075!important}
+}
+
+
+/* V32 — brighter REAL MOTORS watermark with a visible red/white edge glow */
+body::before{
+  opacity:.20!important;
+  filter:
+    brightness(1.32)
+    contrast(1.18)
+    saturate(1.32)
+    drop-shadow(0 0 1px rgba(255,255,255,.82))
+    drop-shadow(0 0 3px rgba(255,35,65,.88))
+    drop-shadow(0 0 12px rgba(225,20,48,.48))
+    drop-shadow(0 0 28px rgba(225,20,48,.22))!important;
+}
+@keyframes rmLogoV27Rotation{
+  0%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(0deg) rotateX(0deg) rotateZ(-4deg) scale(.96);
+    opacity:.16;
+  }
+  25%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(90deg) rotateX(4deg) rotateZ(0deg) scale(1);
+    opacity:.23;
+  }
+  50%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(180deg) rotateX(0deg) rotateZ(4deg) scale(1.025);
+    opacity:.19;
+  }
+  75%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(270deg) rotateX(-4deg) rotateZ(0deg) scale(1);
+    opacity:.23;
+  }
+  100%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(360deg) rotateX(0deg) rotateZ(-4deg) scale(.96);
+    opacity:.16;
+  }
+}
+@media(max-width:700px){
+  body::before{opacity:.16!important;filter:brightness(1.25) contrast(1.14) saturate(1.25) drop-shadow(0 0 1px rgba(255,255,255,.75)) drop-shadow(0 0 9px rgba(225,20,48,.5))!important}
+}
+@media(prefers-reduced-motion:reduce){
+  body::before{opacity:.18!important}
+}
+
+
+/* V33 — dimensional 3D depth / extruded edge for the REAL MOTORS logo */
+body::before{
+  transform-style:preserve-3d!important;
+  filter:
+    brightness(1.36)
+    contrast(1.22)
+    saturate(1.35)
+    drop-shadow(1px 1px 0 rgba(255,255,255,.78))
+    drop-shadow(2px 2px 0 rgba(255,45,68,.92))
+    drop-shadow(3px 3px 0 rgba(175,12,35,.92))
+    drop-shadow(4px 4px 0 rgba(92,8,24,.88))
+    drop-shadow(6px 7px 0 rgba(18,5,10,.9))
+    drop-shadow(0 0 5px rgba(255,35,65,.85))
+    drop-shadow(0 0 16px rgba(225,20,48,.42))!important;
+}
+@keyframes rmLogoV27Rotation{
+  0%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(0deg) rotateX(0deg) rotateZ(-4deg) scale(.96);
+    opacity:.17;
+  }
+  25%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(90deg) rotateX(4deg) rotateZ(0deg) scale(1);
+    opacity:.24;
+  }
+  50%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(180deg) rotateX(0deg) rotateZ(4deg) scale(1.025);
+    opacity:.20;
+  }
+  75%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(270deg) rotateX(-4deg) rotateZ(0deg) scale(1);
+    opacity:.24;
+  }
+  100%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(360deg) rotateX(0deg) rotateZ(-4deg) scale(.96);
+    opacity:.17;
+  }
+}
+@media(max-width:700px){
+  body::before{
+    filter:brightness(1.3) contrast(1.18) saturate(1.3)
+      drop-shadow(1px 1px 0 rgba(255,255,255,.7))
+      drop-shadow(2px 2px 0 rgba(255,45,68,.85))
+      drop-shadow(4px 4px 0 rgba(120,8,28,.85))
+      drop-shadow(0 0 10px rgba(225,20,48,.48))!important;
+  }
+}
+
+
+/* V34 — real layered extrusion: stacked logo faces create visible side thickness */
+body::before{content:none!important;display:none!important}
+.rm-logo-extruded{
+  position:fixed;
+  z-index:0;
+  left:50%;
+  top:52%;
+  width:min(43vw,520px);
+  height:min(43vw,520px);
+  min-width:280px;
+  min-height:280px;
+  pointer-events:none;
+  transform-style:preserve-3d;
+  transform:translate3d(-50%,-50%,0);
+  animation:rmExtrudedLogoTilt 18s ease-in-out infinite;
+  will-change:transform;
+  opacity:.22;
+}
+.rm-logo-extruded img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  backface-visibility:visible;
+  transform-style:preserve-3d;
+}
+.rm-logo-extruded .rm-logo-side{
+  filter:brightness(.38) sepia(.35) saturate(2.4) hue-rotate(305deg)
+    drop-shadow(0 0 2px rgba(255,20,50,.35));
+}
+.rm-logo-extruded .rm-logo-face{
+  filter:brightness(1.38) contrast(1.2) saturate(1.4)
+    drop-shadow(0 0 1px rgba(255,255,255,.9))
+    drop-shadow(0 0 4px rgba(255,35,65,.9))
+    drop-shadow(0 0 18px rgba(225,20,48,.5));
+}
+@keyframes rmExtrudedLogoTilt{
+  0%,100%{
+    transform:translate3d(-50%,-50%,0) perspective(1200px)
+      rotateY(-24deg) rotateX(5deg) rotateZ(-2deg) scale(.97);
+  }
+  25%{
+    transform:translate3d(-50%,-50%,0) perspective(1200px)
+      rotateY(-10deg) rotateX(-3deg) rotateZ(0deg) scale(1);
+  }
+  50%{
+    transform:translate3d(-50%,-50%,0) perspective(1200px)
+      rotateY(24deg) rotateX(5deg) rotateZ(2deg) scale(1.025);
+  }
+  75%{
+    transform:translate3d(-50%,-50%,0) perspective(1200px)
+      rotateY(10deg) rotateX(-3deg) rotateZ(0deg) scale(1);
+  }
+}
+@media(max-width:700px){
+  .rm-logo-extruded{width:min(78vw,390px);height:min(78vw,390px);min-width:0;min-height:0;opacity:.17;animation-duration:22s}
+}
+@media(prefers-reduced-motion:reduce){
+  .rm-logo-extruded{animation:none;transform:translate3d(-50%,-50%,0) perspective(1200px) rotateY(-12deg)}
+}
+
+
+/* V35 — restore V27's full 360-degree Y-axis logo rotation on the extruded logo */
+.rm-logo-extruded{
+  transform-style:preserve-3d!important;
+  animation:rmExtrudedLogoV27Spin 30s ease-in-out infinite!important;
+  will-change:transform;
+}
+.rm-logo-extruded img{
+  transform-style:preserve-3d!important;
+}
+@keyframes rmExtrudedLogoV27Spin{
+  0%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px)
+      rotateY(0deg) rotateX(0deg) rotateZ(-4deg) scale(.96);
+  }
+  25%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px)
+      rotateY(90deg) rotateX(4deg) rotateZ(0deg) scale(1);
+  }
+  50%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px)
+      rotateY(180deg) rotateX(0deg) rotateZ(4deg) scale(1.025);
+  }
+  75%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px)
+      rotateY(270deg) rotateX(-4deg) rotateZ(0deg) scale(1);
+  }
+  100%{
+    transform:translate3d(-50%,-50%,0) perspective(1100px)
+      rotateY(360deg) rotateX(0deg) rotateZ(-4deg) scale(.96);
+  }
+}
+@media(max-width:700px){
+  .rm-logo-extruded{animation-duration:36s!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .rm-logo-extruded{animation:none!important;transform:translate3d(-50%,-50%,0) perspective(1100px) rotateY(0deg)!important}
+}
+
+
+/* V36 PERFORMANCE PASS — retain design, reduce GPU and paint work */
+.hero:after{filter:blur(10px)!important;animation-duration:14s!important;opacity:.7}
+.hero-bg{animation-duration:12s!important;opacity:.55!important}
+.hero:before{animation:none!important}
+.hero:after,.hero-reference:after{mix-blend-mode:normal!important}
+.visual-tag,.cart-overlay.open{backdrop-filter:none!important}
+.brand-logo,.product-img img{filter:none!important}
+.product-card{animation-duration:.38s!important}
+.product-card:hover{box-shadow:0 10px 22px #0007!important;transform:translateY(-4px)!important}
+.category-card:hover{box-shadow:0 10px 22px #0006!important;transform:translateY(-4px)!important}
+.delivery-badge{box-shadow:0 0 18px #e31b3220!important}
+.ticker>div{will-change:transform;animation-duration:38s!important}
+.rm-logo-extruded{opacity:.19!important;contain:layout paint style;backface-visibility:visible}
+.rm-logo-extruded .rm-logo-side{filter:none!important;opacity:.58!important}
+.rm-logo-extruded .rm-logo-face{filter:brightness(1.22) contrast(1.12) saturate(1.2) drop-shadow(0 0 3px rgba(255,35,65,.65))!important}
+@media(max-width:700px){
+ .rm-logo-extruded{opacity:.14!important}
+ .hero:after{display:none!important}
+ .ticker>div{animation-duration:48s!important}
+}
+@media(prefers-reduced-motion:reduce){.hero:after,.hero-bg,.ticker>div{animation:none!important}}
