@@ -27,6 +27,15 @@ function renderFilters(){
  const bs=document.querySelector("#filter-brand"),cs=document.querySelector("#filter-category");
  if(bs)bs.innerHTML='<option value="">ALL BRANDS</option>'+brands.map(x=>`<option>${esc(x.name)}</option>`).join("");
  if(cs)cs.innerHTML='<option value="">ALL CATEGORIES</option>'+categories.map(x=>`<option>${esc(x.name)}</option>`).join("");
+ const cg=document.querySelector("#category-grid");
+ if(cg){
+  cg.innerHTML=categories.map((x,i)=>`<button type="button" class="category-card" data-category="${esc(x.name)}"><small>${String(i+1).padStart(2,"0")}</small><strong>${esc(x.name)}</strong><span>EXPLORE ↗</span></button>`).join("")||'<p class="category-empty">No categories have been added yet.</p>';
+  cg.querySelectorAll(".category-card").forEach(card=>card.addEventListener("click",()=>{
+   const filter=document.querySelector("#filter-category");
+   if(filter){filter.value=card.dataset.category;renderProducts();}
+   document.querySelector("#shop")?.scrollIntoView({behavior:"smooth"});
+  }));
+ }
  const br=document.querySelector("#brand-row");
  if(br)br.innerHTML=brands.map((x,i)=>{const logoSrc=x.image_url|| (String(x.name||'').trim().toUpperCase()==='BAJAJ'?'assets/BAJAJ-symbol-transparent-clean.png':'');return `<button onclick="document.querySelector('#filter-brand').value='${esc(x.name)}';renderProducts();document.querySelector('#shop').scrollIntoView({behavior:'smooth'})">${logoSrc?`<span class="brand-logo-frame"><img class="brand-tile-photo" src="${esc(logoSrc)}" alt="${esc(x.name)}"></span>`:''}<small>${String(i+1).padStart(2,'0')}</small><b>${esc(x.name)}</b><span>EXPLORE ↗</span></button>`}).join("");
  const mp=document.querySelector("#model-pills");

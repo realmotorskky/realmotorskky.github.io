@@ -1,5 +1,19 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>REAL MOTORS | Motorcycle Parts</title><link rel="icon" type="image/png" href="assets/real-motors-logo.png"><link rel="stylesheet" href="styles.css"></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>REAL MOTORS | Motorcycle Parts</title><link rel="icon" type="image/png" href="assets/real-motors-logo.png"><link rel="stylesheet" href="styles.css"><style>
+.category-showcase{padding-top:78px;padding-bottom:76px}
+.category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.category-card{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:170px;padding:24px 22px;background:rgba(17,18,21,.62);border:1px solid rgba(255,255,255,.16);color:#fff;text-align:left;text-decoration:none;overflow:hidden;cursor:pointer;transition:border-color .25s,background .25s,transform .25s}
+.category-card:before{content:"";position:absolute;width:110px;height:110px;right:-32px;bottom:-55px;border-radius:50%;background:rgba(237,25,55,.12);transition:transform .3s}
+.category-card:hover{border-color:#ed1937;background:rgba(237,25,55,.09);transform:translateY(-3px)}
+.category-card:hover:before{transform:scale(1.5)}
+.category-card small{font-size:10px;letter-spacing:1.5px;color:#999}
+.category-card strong{position:relative;font-size:20px;font-weight:900;text-transform:uppercase}
+.category-card span{position:relative;color:#ed1937;font-size:10px;letter-spacing:1.3px}
+.category-empty{color:#aaa;padding:20px 0}
+@media(max-width:900px){.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.category-showcase{padding-top:48px;padding-bottom:48px}.category-grid{grid-template-columns:1fr}.category-card{min-height:135px}}
+</style>
+</head>
 <body class="rm-page-categories">
 <div class="topline"><span>GENUINE & SECOND QUALITY MOTORCYCLE SPARE PARTS</span><span>● KATTANKUDY, SRI LANKA</span></div>
 <header class="header"><a class="logo" href="index.html"><img class="brand-logo" src="assets/real-motors-logo.png" alt="REAL MOTORS logo"><span>REAL<span class="red">MOTORS</span><small>MOTORCYCLE SPARE PARTS</small></span></a>
@@ -17,6 +31,10 @@
 </section>
 <section class="ticker"><div>GENUINE PARTS <b>✦</b> SECOND QUALITY <b>✦</b> BUILT FOR YOUR BIKE <b>✦</b> REAL MOTORS <b>✦</b> GENUINE PARTS <b>✦</b> SECOND QUALITY <b>✦</b></div></section>
 
+<section class="section category-showcase" id="category-showcase">
+<div class="section-head"><div><p class="eyebrow">FIND WHAT YOU NEED</p><h2>SHOP BY <em>CATEGORY</em></h2></div><span>01 / CATEGORIES</span></div>
+<div class="category-grid" id="category-grid" aria-live="polite"></div>
+</section>
 <section class="section brands" id="brands"><div class="section-head"><div><p class="eyebrow">YOUR MACHINE. YOUR MATCH.</p><h2>BIKE <em>BRANDS</em></h2></div><span>02 / BRANDS</span></div><div class="brand-row" id="brand-row"></div></section>
 <section class="section models" id="models"><div class="section-head"><div><p class="eyebrow">FIND PARTS THAT FIT</p><h2>POPULAR BIKE <em>MODELS</em></h2></div><span>03 / MODELS</span></div><div class="model-pills" id="model-pills"></div></section>
 <section class="section shop" id="shop"><div class="section-head"><div><p class="eyebrow">THE PARTS COUNTER</p><h2>FEATURED <em>PARTS</em></h2><p class="muted">Select a product to view its dedicated details page.</p></div><span>04 / CATALOGUE</span></div><div class="tools"><label class="searchbox">⌕ <input id="search" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Search product, part number or bike model..." oninput="renderProducts()"></label><select id="filter-brand" onchange="renderProducts()"><option value="">All brands</option></select><select id="filter-category" onchange="renderProducts()"><option value="">All categories</option><option>Lighting</option><option>Brake System</option><option>Engine Parts</option><option>Body Parts</option></select><button class="clear" onclick="clearFilters()">RESET ↺</button></div><div class="product-grid" id="products"></div><p class="demo-note">DEMO CATALOGUE · Sample products and prices for design preview only. Not confirmed stock.</p></section>
