@@ -21,7 +21,8 @@ function renderProducts(){
  const q=(document.querySelector("#search")?.value||"").toLowerCase(),b=document.querySelector("#filter-brand")?.value||"",c=document.querySelector("#filter-category")?.value||"";
  const list=products.filter(p=>(!q||[p.name,p.part,p.brand,p.category,...p.models].join(" ").toLowerCase().includes(q))&&(!b||p.brand===b)&&(!c||p.category===c));
  const el=document.querySelector("#products");if(!el)return;
- el.innerHTML=list.map(p=>`<article class="product-card" onclick="location.href='product.html?id=${encodeURIComponent(p.id)}'"><div class="product-img"><img src="${esc(p.image||'assets/real-motors-logo.png')}" alt="${esc(p.name)}" loading="lazy" decoding="async"><span>${p.inStock?'GENUINE PART':'OUT OF STOCK'}</span><button aria-label="View product">↗</button></div><div class="product-info"><small>${esc(p.brand)} / ${esc(p.category)}</small><h3>${esc(p.name)}</h3><p>FITS: ${esc(p.models.join(", ")||"Confirm with shop")}</p><div><b>${money(p.price)}</b><span>VIEW DETAILS ↗</span></div></div></article>`).join("")||'<p class="empty">No products available yet. Please check back soon.</p>';
+ el.innerHTML=list.map(p=>`<article class="product-card" onclick="location.href='product.html?id=${encodeURIComponent(p.id)}'"><div class="product-img"><img src="${esc(p.image||'assets/real-motors-logo.png')}" alt="${esc(p.name)}" loading="lazy" decoding="async"><span>${p.inStock?'GENUINE PART':'OUT OF STOCK'}</span><button type="button" class="rm-product-share" data-share-product="${esc(p.id)}" aria-label="Share ${esc(p.name)}" title="Share product">↗ SHARE</button><button type="button" aria-label="View product">↗</button></div><div class="product-info"><small>${esc(p.brand)} / ${esc(p.category)}</small><h3>${esc(p.name)}</h3><p>FITS: ${esc(p.models.join(", ")||"Confirm with shop")}</p><div><b>${money(p.price)}</b><span>VIEW DETAILS ↗</span></div></div></article>`).join("")||'<p class="empty">No products available yet. Please check back soon.</p>';
+ el.querySelectorAll('[data-share-product]').forEach(btn=>btn.addEventListener('click',event=>shareProduct(event,btn.dataset.shareProduct)));
 }
 function renderFilters(){
  const bs=document.querySelector("#filter-brand"),cs=document.querySelector("#filter-category");
@@ -54,8 +55,37 @@ function shopWhatsApp(){let raw=(siteInfo.whatsapp||siteInfo.phone||"").trim(),n
 function renderProduct(id){
  const p=products.find(x=>String(x.id)===String(id)),el=document.querySelector("#product-page");if(!el)return;
  if(!p){el.innerHTML="<h2>Product not found</h2>";return}
- el.innerHTML=`<div class="crumb"><a href="index.html">HOME</a> / <a href="index.html#shop">PARTS</a> / ${esc(p.name.toUpperCase())}</div><div class="detail-grid"><div class="detail-image"><img src="${esc(p.image||'assets/real-motors-logo.png')}" alt="${esc(p.name)}" loading="lazy" decoding="async"></div><div class="detail-copy"><p class="eyebrow">${esc(p.brand)} / ${esc(p.category)}</p><h1>${esc(p.name)}</h1><p class="partno">PART NUMBER: ${esc(p.part)}</p><div class="detail-price">${money(p.price)}</div><p class="detail-desc">${esc(p.desc)}</p><div class="fit-box"><small>COMPATIBLE BIKE MODELS</small><b>${esc(p.models.join(" · ")||"Confirm with shop")}</b></div><button class="primary" onclick="addToCart('${p.id}')">ADD TO CART <b>＋</b></button><a class="back-link" href="index.html#shop">← BACK TO PARTS</a></div></div>`;
+ const shareDescription=[p.desc,p.part?`Part Number: ${p.part}`:"",p.models.length?`Fits: ${p.models.join(", ")}`:""].filter(Boolean).join(" · ");
+ document.title=`${p.name} | REAL MOTORS`;
+ setProductMeta('description',`${p.name} at REAL MOTORS. ${shareDescription}`);
+ setProductMeta('og:title',`${p.name} | REAL MOTORS`,'property');
+ setProductMeta('og:description',shareDescription||'Motorcycle spare parts from REAL MOTORS, Kattankudy, Sri Lanka.','property');
+ setProductMeta('og:url',productPermalink(p.id),'property');
+ setProductMeta('og:type','product','property');
+ setProductMeta('twitter:card','summary_large_image');
+ setProductMeta('twitter:title',`${p.name} | REAL MOTORS`);
+ setProductMeta('twitter:description',shareDescription||'Motorcycle spare parts from REAL MOTORS, Kattankudy, Sri Lanka.');
+ let canonical=document.head.querySelector('link[rel=canonical]');if(!canonical){canonical=document.createElement('link');canonical.rel='canonical';document.head.appendChild(canonical)}canonical.href=productPermalink(p.id);
+ if(p.image)setProductMeta('og:image',new URL(p.image,location.href).href,'property');
+ el.innerHTML=`<div class="crumb"><a href="index.html">HOME</a> / <a href="index.html#shop">PARTS</a> / ${esc(p.name.toUpperCase())}</div><div class="detail-grid"><div class="detail-image"><img src="${esc(p.image||'assets/real-motors-logo.png')}" alt="${esc(p.name)}" loading="lazy" decoding="async"></div><div class="detail-copy"><p class="eyebrow">${esc(p.brand)} / ${esc(p.category)}</p><h1>${esc(p.name)}</h1><p class="partno">PART NUMBER: ${esc(p.part)}</p><div class="detail-price">${money(p.price)}</div><p class="detail-desc">${esc(p.desc)}</p><div class="fit-box"><small>COMPATIBLE BIKE MODELS</small><b>${esc(p.models.join(" · ")||"Confirm with shop")}</b></div><div class="rm-detail-actions"><button class="primary" onclick="addToCart('${p.id}')">ADD TO CART <b>＋</b></button><button type="button" class="rm-detail-share" onclick="shareProduct(event,'${esc(p.id)}')">SHARE PRODUCT ↗</button></div><a class="back-link" href="index.html#shop">← BACK TO PARTS</a></div></div>`;
 }
+function productPermalink(id){const url=new URL('product.html',location.href);url.search='';url.searchParams.set('id',String(id));url.hash='';return url.href}
+function setProductMeta(key,content,attribute='name'){let meta=document.head.querySelector(`meta[${attribute}="${key}"]`);if(!meta){meta=document.createElement('meta');meta.setAttribute(attribute,key);document.head.appendChild(meta)}meta.setAttribute('content',content)}
+function showShareNotice(message){let toast=document.getElementById('rm-share-toast');if(!toast){toast=document.createElement('div');toast.id='rm-share-toast';toast.setAttribute('role','status');toast.setAttribute('aria-live','polite');document.body.appendChild(toast)}toast.textContent=message;toast.classList.add('show');clearTimeout(showShareNotice.timer);showShareNotice.timer=setTimeout(()=>toast.classList.remove('show'),3200)}
+async function copyShareLink(url){if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(url);return}const field=document.createElement('textarea');field.value=url;field.setAttribute('readonly','');field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();const ok=document.execCommand('copy');field.remove();if(!ok)throw new Error('Clipboard copy was blocked')}
+async function shareProduct(event,id){if(event){event.preventDefault();event.stopPropagation()}const p=products.find(x=>String(x.id)===String(id));if(!p)return;const url=productPermalink(p.id);const text=[p.name,p.part?`Part No: ${p.part}`:'','REAL MOTORS · Motorcycle Spare Parts'].filter(Boolean).join('\n');if(navigator.share){try{await navigator.share({title:`${p.name} | REAL MOTORS`,text,url});return}catch(error){if(error&&error.name==='AbortError')return}}try{await copyShareLink(url);showShareNotice('Product link copied! Paste it into WhatsApp, Facebook or a message.')}catch(error){window.prompt('Copy this product link:',url)}}
+function installShareStyles(){if(document.getElementById('rm-share-styles'))return;const style=document.createElement('style');style.id='rm-share-styles';style.textContent=`
+.rm-product-share{position:absolute!important;top:12px!important;right:12px!important;bottom:auto!important;left:auto!important;width:auto!important;height:30px!important;padding:0 10px!important;border:1px solid #ffffff55!important;background:#111d!important;color:#fff!important;font-size:9px!important;font-weight:900!important;letter-spacing:.6px!important;z-index:7!important;cursor:pointer!important;transform:none!important}
+.rm-product-share:hover{background:#e31b32!important;border-color:#e31b32!important}
+.rm-detail-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:18px}
+.rm-detail-actions .primary{margin:0}
+.rm-detail-share{min-height:48px;padding:0 18px;background:#202024;color:#fff;border:1px solid #ffffff45;font-size:10px;font-weight:900;letter-spacing:1px;cursor:pointer;transition:.25s}
+.rm-detail-share:hover{background:#e31b32;border-color:#e31b32;transform:translateY(-2px)}
+#rm-share-toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,15px);opacity:0;pointer-events:none;z-index:9999;max-width:min(92vw,520px);padding:13px 18px;background:#17171b;border:1px solid #e31b32;color:#fff;font:700 12px/1.5 'DM Sans',sans-serif;box-shadow:0 10px 35px #0009;transition:opacity .2s,transform .2s}
+#rm-share-toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:650px){.rm-detail-actions{align-items:stretch}.rm-detail-actions .primary,.rm-detail-share{flex:1;justify-content:center}.rm-product-share{top:8px!important;right:8px!important;padding:0 7px!important;font-size:8px!important}}
+`;document.head.appendChild(style)}
+
 function renderCart(){
  const count=cart.reduce((a,p)=>a+p.qty,0),badge=document.querySelector("#cart-count");if(badge)badge.textContent=count;
  const items=document.querySelector("#cart-items");if(items)items.innerHTML=cart.length?cart.map(p=>`<div class="cart-item"><span>${esc(p.name)}<small>${p.qty} × ${money(p.price)}</small></span><button onclick="removeCart('${p.id}')">REMOVE</button></div>`).join(""):'<p class="empty">Your cart is empty.</p>';
@@ -92,6 +122,7 @@ function checkoutWhatsApp(){
  window.open("https://wa.me/"+number+"?text="+encodeURIComponent(msg),"_blank","noopener");
 }
 async function init(){
+ installShareStyles();
  clearOldDemoData();
  await loadCloudData();renderFilters();renderSiteInfo();renderProducts();renderCart();
  const id=new URLSearchParams(location.search).get("id");if(id)renderProduct(id);
