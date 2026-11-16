@@ -1,4 +1,64 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Product | REAL MOTORS</title><link rel="icon" type="image/png" href="assets/real-motors-logo.png"><link rel="stylesheet" href="styles.css"></head><body><div class="topline"><span>GENUINE & LOCAL MOTORCYCLE SPARE PARTS</span><span>● KATTANKUDY, SRI LANKA</span></div><header class="header"><a class="logo" href="index.html"><img class="brand-logo" src="assets/real-motors-logo.png" alt="REAL MOTORS logo"><span>REAL<span class="red">MOTORS</span><small>MOTORCYCLE SPARE PARTS</small></span></a><nav><a href="index.html#home">HOME</a><a href="index.html#categories">CATEGORIES</a><a href="index.html#brands">BIKE BRANDS</a><a href="index.html#models">BIKE MODELS</a></nav><div class="head-actions"><a class="cart-button" href="index.html#shop">BACK TO SHOP ↗</a></div></header><main class="product-page" id="product-page"></main><footer><a class="logo" href="index.html"><img class="brand-logo" src="assets/real-motors-logo.png" alt="REAL MOTORS logo"><span>REAL<span class="red">MOTORS</span><small>MOTORCYCLE SPARE PARTS</small></span></a><p>Genuine & local motorcycle spare parts.</p><span>© 2026 REAL MOTORS · DESIGN PREVIEW</span></footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="app.js"></script><script>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Product | REAL MOTORS</title><link rel="icon" type="image/png" href="assets/real-motors-logo.png"><link rel="stylesheet" href="styles.css"></head><body><div class="topline"><span>GENUINE & LOCAL MOTORCYCLE SPARE PARTS</span><span>● KATTANKUDY, SRI LANKA</span></div><header class="header"><a class="logo" href="index.html"><img class="brand-logo" src="assets/real-motors-logo.png" alt="REAL MOTORS logo"><span>REAL<span class="red">MOTORS</span><small>MOTORCYCLE SPARE PARTS</small></span></a><nav><a href="index.html#home">HOME</a><a href="index.html#categories">CATEGORIES</a><a href="index.html#brands">BIKE BRANDS</a><a href="index.html#models">BIKE MODELS</a></nav><div class="head-actions"><a class="cart-button" href="index.html#shop">BACK TO SHOP ↗</a></div></header><main class="product-page" id="product-page"></main><footer><a class="logo" href="index.html"><img class="brand-logo" src="assets/real-motors-logo.png" alt="REAL MOTORS logo"><span>REAL<span class="red">MOTORS</span><small>MOTORCYCLE SPARE PARTS</small></span></a><p>Genuine & local motorcycle spare parts.</p><span>© 2026 REAL MOTORS · DESIGN PREVIEW</span></footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="app.js?v=44"></script>
+<script>
+(function(){
+  const root=document.getElementById('product-page');
+  if(!root)return;
+  function installShare(){
+    const copy=root.querySelector('.detail-copy');
+    if(!copy)return;
+    let actions=copy.querySelector('.rm-detail-actions');
+    const primary=copy.querySelector('button.primary');
+    if(!actions&&primary){
+      actions=document.createElement('div');
+      actions.className='rm-detail-actions';
+      primary.parentNode.insertBefore(actions,primary);
+      actions.appendChild(primary);
+    }
+    if(!actions)return;
+    if(actions.querySelector('.rm-detail-share'))return;
+    const button=document.createElement('button');
+    button.type='button';
+    button.className='rm-detail-share';
+    button.textContent='SHARE PRODUCT ↗';
+    button.setAttribute('aria-label','Share this product');
+    button.addEventListener('click',async function(event){
+      event.preventDefault();event.stopPropagation();
+      const title=copy.querySelector('h1')?.textContent?.trim()||'REAL MOTORS Product';
+      const part=copy.querySelector('.partno')?.textContent?.trim()||'';
+      const url=new URL(location.href);url.hash='';
+      const shareData={title:title+' | REAL MOTORS',text:[title,part,'REAL MOTORS · Motorcycle Spare Parts'].filter(Boolean).join('\n'),url:url.href};
+      if(navigator.share){
+        try{await navigator.share(shareData);return;}
+        catch(err){if(err&&err.name==='AbortError')return;}
+      }
+      try{
+        if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(url.href);}
+        else{
+          const field=document.createElement('textarea');field.value=url.href;field.setAttribute('readonly','');field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();
+          const ok=document.execCommand('copy');field.remove();if(!ok)throw new Error('copy failed');
+        }
+        let toast=document.getElementById('rm-share-toast');
+        if(!toast){toast=document.createElement('div');toast.id='rm-share-toast';toast.setAttribute('role','status');document.body.appendChild(toast);}
+        toast.textContent='Product link copied! Paste it into WhatsApp or Facebook.';toast.classList.add('show');
+        clearTimeout(window.__rmShareToastTimer);window.__rmShareToastTimer=setTimeout(()=>toast.classList.remove('show'),3000);
+      }catch(err){window.prompt('Copy this product link:',url.href);}
+    });
+    actions.appendChild(button);
+  }
+  const observer=new MutationObserver(installShare);
+  observer.observe(root,{childList:true,subtree:true});
+  installShare();
+})();
+</script>
+<style>
+.rm-detail-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:18px}
+.rm-detail-actions .primary{margin:0}
+.rm-detail-share{min-height:48px;padding:0 18px;background:#202024;color:#fff;border:1px solid #ffffff45;font-size:10px;font-weight:900;letter-spacing:1px;cursor:pointer;transition:.25s}
+.rm-detail-share:hover{background:#e31b32;border-color:#e31b32;transform:translateY(-2px)}
+#rm-share-toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,15px);opacity:0;pointer-events:none;z-index:9999;max-width:min(92vw,520px);padding:13px 18px;background:#17171b;border:1px solid #e31b32;color:#fff;font:700 12px/1.5 'DM Sans',sans-serif;box-shadow:0 10px 35px #0009;transition:opacity .2s,transform .2s}
+#rm-share-toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:650px){.rm-detail-actions{align-items:stretch}.rm-detail-actions .primary,.rm-detail-share{flex:1;justify-content:center}}
+</style><script>
 (function(){
  function addExtrudedLogo(){
   if(document.querySelector(".rm-logo-extruded"))return;
