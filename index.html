@@ -62,4 +62,64 @@
  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",addExtrudedLogo,{once:true});
  else addExtrudedLogo();
 })();
-</script></body></html>
+</script>
+<script>
+(function(){
+  const grid=document.getElementById("products");
+  if(!grid)return;
+  let expanded=false, button;
+  function hasFilters(){
+    return !!((document.getElementById("search")||{}).value||"").trim() ||
+      !!(document.getElementById("filter-brand")||{}).value ||
+      !!(document.getElementById("filter-category")||{}).value;
+  }
+  function update(){
+    const cards=[...grid.children].filter(el=>el.nodeType===1);
+    if(!cards.length){if(button)button.style.display="none";grid.style.maxHeight="";grid.style.overflow="";return;}
+    const tops=cards.map(c=>c.offsetTop);
+    const unique=[...new Set(tops)].sort((a,b)=>a-b);
+    const active=hasFilters();
+    const shouldLimit=!active&&!expanded&&unique.length>2;
+    if(shouldLimit){
+      const secondRow=unique[1];
+      const rowCards=cards.filter(c=>c.offsetTop===secondRow);
+      const bottom=Math.max(...rowCards.map(c=>c.offsetTop+c.offsetHeight));
+      grid.style.maxHeight=bottom-grid.offsetTop+"px";
+      grid.style.overflow="hidden";
+    }else{
+      grid.style.maxHeight="";
+      grid.style.overflow="";
+    }
+    if(button){
+      button.style.display=(!active&&unique.length>2)?"inline-flex":"none";
+      button.textContent=expanded?"SHOW LESS ↑":"VIEW ALL PRODUCTS ↓";
+    }
+  }
+  function createButton(){
+    if(button)return;
+    button=document.createElement("button");
+    button.type="button";
+    button.className="rm-view-all-products";
+    button.textContent="VIEW ALL PRODUCTS ↓";
+    button.style.cssText="display:none;margin:24px auto 0;padding:13px 24px;background:#d71920;color:#fff;border:0;font-weight:700;letter-spacing:.08em;cursor:pointer;";
+    button.addEventListener("click",function(){
+      expanded=!expanded;
+      if(!expanded)document.getElementById("shop").scrollIntoView({behavior:"smooth",block:"start"});
+      update();
+    });
+    grid.insertAdjacentElement("afterend",button);
+  }
+  createButton();
+  const observer=new MutationObserver(()=>{expanded=false;requestAnimationFrame(update);});
+  observer.observe(grid,{childList:true,subtree:true});
+  ["search","filter-brand","filter-category"].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el)el.addEventListener("input",()=>{expanded=false;requestAnimationFrame(update);});
+    if(el)el.addEventListener("change",()=>{expanded=false;requestAnimationFrame(update);});
+  });
+  window.addEventListener("resize",()=>requestAnimationFrame(update));
+  setTimeout(update,300);
+  setTimeout(update,1000);
+})();
+</script>
+</body></html>
